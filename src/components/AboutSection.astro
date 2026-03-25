@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 // AboutSection component - Single Responsibility: About display
 const { id } = Astro.props;
 ---
@@ -8,7 +9,15 @@ const { id } = Astro.props;
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
       <div class="lg:col-span-5 relative animate-on-scroll">
         <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-          <img alt="Medical Consultation" class="w-full h-full object-cover" data-alt="A focused group of diverse medical professionals collaborating over a table in a warm, sophisticated office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDspWkxnB5ZRIKtFyV7Uv3NlK5SexjOc6lrUBKQ4wtf6x80u355xBxKCbg3bS_wziGlfDHAGdAVVyFW2-MEsBfq2q1PeZHwdp3m7gtkXAkIz7X1NrVb5SNmAEDFscoh1OVVpluIV1JFUyAAIh3LPvVu7MijNP81yddd2kN3uNP_wonoCfM76nal9DKwWJV63_YihFXdz-LzHouC-dZ9gmUNBxQABZZcPY9AvEnk5SyOupstbNLyrvWMPPG8WWfGkdfaKTkwunfbBSLn" loading="lazy" />
+          <Image
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDspWkxnB5ZRIKtFyV7Uv3NlK5SexjOc6lrUBKQ4wtf6x80u355xBxKCbg3bS_wziGlfDHAGdAVVyFW2-MEsBfq2q1PeZHwdp3m7gtkXAkIz7X1NrVb5SNmAEDFscoh1OVVpluIV1JFUyAAIh3LPvVu7MijNP81yddd2kN3uNP_wonoCfM76nal9DKwWJV63_YihFXdz-LzHouC-dZ9gmUNBxQABZZcPY9AvEnk5SyOupstbNLyrvWMPPG8WWfGkdfaKTkwunfbBSLn"
+            alt="Medical Consultation"
+            class="w-full h-full object-cover"
+            sizes="(max-width: 768px) 100vw, 480px"
+            inferSize={true}
+            loading="lazy"
+            placeholder="blur"
+          />
         </div>
         <div class="absolute -bottom-10 -right-10 bg-white p-8 rounded-lg shadow-xl max-w-xs hidden md:block animate-on-scroll animation-delay-300 hover:shadow-2xl transition-shadow duration-300">
           <p class="font-headline italic text-2xl text-primary">"La subjetividad como dato objetivo."</p>
