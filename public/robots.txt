@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Indica dónde está tu sitemap (cambia el dominio por el tuyo real)
+Sitemap: https://ateliermedical.com/sitemap-index.xml
