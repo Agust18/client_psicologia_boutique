@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import AltoRen from "../assets/images/psicologia-alto-rendimiento.jpg";
 // OrganizationalPsychologySection component - Single Responsibility: Organizational psychology display
 const { id } = Astro.props;
 ---
@@ -31,9 +33,16 @@ const { id } = Astro.props;
       </div>
     </div>
     <div class="lg:w-1/2 relative min-h-[280px] md:min-h-[360px] lg:min-h-[400px] sm:min-h-[320px]">
-      <img alt="Organizational Setting" class="absolute inset-0 w-full h-full object-cover" data-alt="Modern high-rise corporate office lounge with minimalist design and a professional atmosphere, overlooking a city skyline at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxwXrwIq_o_ZogBbTDFRpbh-kBYYscAJEO33deplkW5GZicgPb_5VlxboO83jq-aLGrRX8VpUeU6v1smnj6KrKl5D-aczL__ixprP4qE0M4ucjBXWkJe9BxlAxbyau6ukbJ7iQUagyfFH6NT6CL1TBOT_Y7T9JLl5fTktm0Iw0j1n54Op2Wqgm93d8EYoLXPuBlmgFkFi0GDSOb23ePfR1OZvfMj6nO4DacbOmZb-IyeID8KtN0mW3ZqqM5wIHhP2n08XJ1bAjIH" loading="lazy" />
-      <div class="absolute inset-0 bg-primary/20 backdrop-blur-sm"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent"></div>
-    </div>
+      
+      <Image 
+        src={AltoRen} 
+        alt="Entorno organizacional de alto rendimiento" 
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+      
+      <div class="absolute inset-0 bg-black/70"></div>
+      
+      </div>
   </div>
 </section>
