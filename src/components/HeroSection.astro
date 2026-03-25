@@ -11,6 +11,10 @@ import heroImg from "../assets/images/hero-main.jpg";
     <div class="absolute inset-0 z-0">
         <Image
             src={heroImg}
+            width={1920}
+            height={1080}
+            format="webp"        
+            quality={"mid"}
             alt="Professional clinical setting"
             class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             loading="eager"
@@ -43,7 +47,7 @@ import heroImg from "../assets/images/hero-main.jpg";
             <div
                 class="mt-12 flex flex-wrap gap-6 animate-fade-in-up animation-delay-400"
             >
-                <button
+                <button aria-label="Solicitar una consulta médica"
                     class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-4 rounded-md font-bold hover:bg-tertiary-fixed transition-all duration-300 transform hover:scale-105 hover:shadow-lg contact-button"
                 >
                     Solicitar Consulta
