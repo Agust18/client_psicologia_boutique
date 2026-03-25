@@ -1,0 +1,39 @@
+---
+// OrganizationalPsychologySection component - Single Responsibility: Organizational psychology display
+const { id } = Astro.props;
+---
+
+<section id={id} class="py-24 md:py-32 px-4 md:px-8 bg-surface">
+  <div class="max-w-7xl mx-auto bg-primary-container rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+    <div class="lg:w-1/2 p-8 md:p-12 lg:p-20 flex flex-col justify-center">
+      <span class="font-label text-xs md:text-sm uppercase tracking-widest text-tertiary-fixed-dim block mb-4 md:mb-6">Corporativo &amp; Organizacional</span>
+      <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl text-white mb-6 md:mb-8">Psicología para <span class="italic">Organizaciones de Alto Rendimiento.</span></h2>
+      <p class="text-primary-fixed text-lg mb-10 leading-relaxed">
+        Trasladamos nuestra experiencia clínica a la salud sistémica de las empresas. Resolvemos conflictos, potenciamos el liderazgo y cuidamos el capital humano.
+      </p>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="text-white/80 flex items-center gap-2">
+          <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="rocket_launch">rocket_launch</span>
+          Coaching Ejecutivo
+        </div>
+        <div class="text-white/80 flex items-center gap-2">
+          <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="diversity_3">diversity_3</span>
+          Equipos dinamicos
+        </div>
+        <div class="text-white/80 flex items-center gap-2">
+          <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="forum">forum</span>
+          Resolución de Conflictos
+        </div>
+        <div class="text-white/80 flex items-center gap-2">
+          <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="sync_alt">sync_alt</span>
+          Feedback 360
+        </div>
+      </div>
+    </div>
+    <div class="lg:w-1/2 relative min-h-[280px] md:min-h-[360px] lg:min-h-[400px] sm:min-h-[320px]">
+      <img alt="Organizational Setting" class="absolute inset-0 w-full h-full object-cover" data-alt="Modern high-rise corporate office lounge with minimalist design and a professional atmosphere, overlooking a city skyline at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxwXrwIq_o_ZogBbTDFRpbh-kBYYscAJEO33deplkW5GZicgPb_5VlxboO83jq-aLGrRX8VpUeU6v1smnj6KrKl5D-aczL__ixprP4qE0M4ucjBXWkJe9BxlAxbyau6ukbJ7iQUagyfFH6NT6CL1TBOT_Y7T9JLl5fTktm0Iw0j1n54Op2Wqgm93d8EYoLXPuBlmgFkFi0GDSOb23ePfR1OZvfMj6nO4DacbOmZb-IyeID8KtN0mW3ZqqM5wIHhP2n08XJ1bAjIH" loading="lazy" />
+      <div class="absolute inset-0 bg-primary/20 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent"></div>
+    </div>
+  </div>
+</section>

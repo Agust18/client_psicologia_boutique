@@ -1,0 +1,110 @@
+---
+// NavBar component - Single Responsibility: Navigation
+---
+
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.04)] transition-colors">
+  <div class="flex justify-between items-center w-full px-4 md:px-6 py-3 md:py-4 max-w-screen-2xl mx-auto">
+    <div class="text-lg md:text-xl font-serif font-bold text-slate-900 dark:text-slate-50">
+      <a href="#inicio" class="hover:text-primary transition-colors">Atelier Medical</a>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-4 lg:gap-6">
+      <a class="text-slate-900 dark:text-white font-semibold border-b-2 border-amber-300 pb-1 font-sans text-sm font-medium hover:text-primary transition-colors" href="#inicio">Inicio</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#sobre-nosotros">Sobre Nosotros</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#equipo-medico">Equipo Médico</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#filosofia">Filosofía</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#areas-intervencion">Servicios</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#psicologia-organizacional">Organizaciones</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#contacto">Contacto</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden scale-95 active:scale-100 transition-transform bg-primary text-on-primary px-2.5 py-1 rounded-md font-medium text-sm">
+      <span class="material-symbols-outlined text-sm">menu</span>
+    </button>
+
+    <!-- CTA Button -->
+    <button class="hidden md:block scale-95 active:scale-100 transition-transform bg-primary text-on-primary px-3 lg:px-4 py-1.5 lg:py-2 rounded-md font-medium text-sm hover:bg-primary-container transition-colors contact-button">
+      Solicitar Consulta
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-lg border-t border-slate-200 dark:border-slate-800">
+    <div class="flex flex-col px-3 md:px-6 py-3 md:py-4 space-y-2.5 md:space-y-3">
+      <a class="text-slate-900 dark:text-white font-semibold border-b-2 border-amber-300 pb-1 font-sans text-sm font-medium" href="#inicio">Inicio</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#sobre-nosotros">Sobre Nosotros</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#equipo-medico">Equipo Médico</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#filosofia">Filosofía</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#areas-intervencion">Servicios</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#psicologia-organizacional">Organizaciones</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#contacto">Contacto</a>
+      <button class="bg-primary text-on-primary px-3 md:px-4 py-2 md:py-2.5 rounded-md font-medium text-sm hover:bg-primary-container transition-colors w-full mt-2.5 md:mt-3 contact-button">
+        Solicitar Consulta
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!(e.target instanceof Node)) return;
+        if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        if (!(e.target instanceof Node)) return;
+        e.preventDefault();
+        const currentAnchor = e.currentTarget;
+        if (!(currentAnchor instanceof HTMLAnchorElement)) return;
+        const href = currentAnchor.getAttribute('href');
+        if (!href) return;
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu after navigation
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
+
+    // Handle contact button clicks
+    document.querySelectorAll('.contact-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const contactSection = document.getElementById('contacto');
+        if (contactSection) {
+          contactSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu after navigation
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
+  });
+</script>

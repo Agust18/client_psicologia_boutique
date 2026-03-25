@@ -1,0 +1,37 @@
+---
+// ContactSection component - Single Responsibility: Contact/CTA display
+const { id } = Astro.props;
+---
+
+<section id={id} class="py-24 md:py-32 px-8 bg-surface">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="font-headline text-5xl text-primary mb-8">Comience su trayectoria hacia la <span class="italic">excelencia clínica</span>.</h2>
+    <p class="text-on-surface-variant text-xl mb-12">Estamos preparados para abordar los desafíos médicos y humanos más complejos. Agende una consulta inicial con nuestro equipo directivo.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button class="bg-primary text-on-primary px-12 py-5 rounded-md text-lg font-bold shadow-lg hover:bg-primary-container transition-all contact-private-button">
+        Solicitar Consulta Privada
+      </button>
+      <button class="bg-white text-primary border border-primary px-12 py-5 rounded-md text-lg font-bold hover:bg-surface-container-low transition-all contact-corporate-button">
+        Contacto Corporativo
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Handle contact buttons
+  const contactPrivateButton = document.querySelector('.contact-private-button');
+  const contactCorporateButton = document.querySelector('.contact-corporate-button');
+
+  if (contactPrivateButton) {
+    contactPrivateButton.addEventListener('click', () => {
+      alert('Para solicitar una consulta privada, por favor contacte directamente a nuestro equipo médico al email: consultas@ateliermedical.com o al teléfono: +54 11 1234-5678');
+    });
+  }
+
+  if (contactCorporateButton) {
+    contactCorporateButton.addEventListener('click', () => {
+      alert('Para contacto corporativo u organizaciones, por favor contacte a nuestro departamento empresarial al email: corporativo@ateliermedical.com o al teléfono: +54 11 1234-5679');
+    });
+  }
+</script>

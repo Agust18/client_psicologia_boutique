@@ -1,17 +1,28 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import HeroSection from '../components/HeroSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import LeadershipSection from '../components/LeadershipSection.astro';
+import BoutiquePhilosophySection from '../components/BoutiquePhilosophySection.astro';
+import AreasInterventionSection from '../components/AreasInterventionSection.astro';
+import FeaturedInterventionsSection from '../components/FeaturedInterventionsSection.astro';
+import OrganizationalPsychologySection from '../components/OrganizationalPsychologySection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Atelier Medical | Consultora Integral e Interdisciplinaria" description="Consultoría médica boutique dedicada a la excelencia en casos de alta complejidad interdisciplinaria.">
+  <NavBar />
+  <main class="pt-24">
+    <HeroSection />
+    <AboutSection id="sobre-nosotros" />
+    <LeadershipSection id="equipo-medico" />
+    <BoutiquePhilosophySection id="filosofia" />
+    <AreasInterventionSection id="areas-intervencion" />
+    <FeaturedInterventionsSection id="intervenciones" />
+    <OrganizationalPsychologySection id="psicologia-organizacional" />
+    <ContactSection id="contacto" />
+  </main>
+  <Footer />
+</BaseLayout>

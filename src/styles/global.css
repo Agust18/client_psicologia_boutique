@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-fixed-dim: #b4c6f7;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-error: #ffffff;
+  --color-surface-variant: #e1e3e4;
+  --color-surface-container-high: #e7e8e9;
+  --color-inverse-surface: #2e3132;
+  --color-primary: #001237;
+  --color-on-primary-container: #7e8fbd;
+  --color-primary-container: #14274f;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface: #f8f9fa;
+  --color-on-secondary-fixed-variant: #394857;
+  --color-secondary-container: #d1e1f4;
+  --color-surface-container-highest: #e1e3e4;
+  --color-on-surface: #191c1d;
+  --color-on-secondary-container: #556474;
+  --color-on-primary: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-primary-fixed: #d9e2ff;
+  --color-error: #ba1a1a;
+  --color-inverse-on-surface: #f0f1f2;
+  --color-background: #f8f9fa;
+  --color-on-error-container: #93000a;
+  --color-tertiary-container: #362500;
+  --color-on-primary-fixed: #041942;
+  --color-surface-tint: #4c5d89;
+  --color-on-tertiary-container: #ad8a46;
+  --color-tertiary-fixed-dim: #e9c176;
+  --color-surface-dim: #d9dadb;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary: #1d1200;
+  --color-secondary: #50606f;
+  --color-outline-variant: #c5c6d2;
+  --color-on-secondary-fixed: #0d1d2a;
+  --color-tertiary-fixed: #ffdea5;
+  --color-on-tertiary-fixed-variant: #5d4201;
+  --color-on-background: #191c1d;
+  --color-secondary-fixed-dim: #b8c8da;
+  --color-on-surface-variant: #444650;
+  --color-on-primary-fixed-variant: #34466f;
+  --color-secondary-fixed: #d4e4f6;
+  --color-surface-container: #edeeef;
+  --color-error-container: #ffdad6;
+  --color-surface-bright: #f8f9fa;
+  --color-outline: #757682;
+  --color-inverse-primary: #b4c6f7;
+  --color-on-tertiary-fixed: #261900;
+
+  --font-family-headline: "Newsreader", serif;
+  --font-family-body: "Manrope", sans-serif;
+  --font-family-label: "Manrope", sans-serif;
+
+  --border-radius-DEFAULT: 0.125rem;
+  --border-radius-lg: 0.25rem;
+  --border-radius-xl: 0.5rem;
+  --border-radius-full: 0.75rem;
+}
+
+/* Reducir espacio vertical en mobile para secciones */
+@media (max-width: 768px) {
+  section[id] {
+    padding-top: 1.75rem !important;
+    padding-bottom: 1.75rem !important;
+  }
+
+  .py-24, .py-32, .py-16, .py-12 {
+    padding-top: 1.75rem !important;
+    padding-bottom: 1.75rem !important;
+  }
+
+  .px-8, .px-6, .px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mt-20, .mt-16, .mb-20, .mb-16 {
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+}

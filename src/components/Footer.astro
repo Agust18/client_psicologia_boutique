@@ -1,0 +1,123 @@
+---
+// Footer component - Single Responsibility: Footer display
+---
+
+<footer class="w-full py-6 md:py-12 px-4 md:px-6 mt-auto bg-slate-50 dark:bg-slate-950">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div class="md:col-span-1">
+            <div
+                class="text-base md:text-lg font-serif italic text-slate-800 dark:text-slate-200 mb-3 md:mb-4"
+            >
+                Atelier Medical
+            </div>
+            <p class="font-sans text-sm Manrope text-slate-500 leading-relaxed">
+                Consultoría médica boutique dedicada a la excelencia en casos de
+                alta complejidad interdisciplinaria.
+            </p>
+          
+        </div>
+        <div>
+            <h4
+                class="font-serif italic text-slate-900 dark:text-slate-100 mb-3 md:mb-4"
+            >
+                Navegación
+            </h4>
+            <ul class="space-y-4">
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#inicio">Inicio</a>
+                </li>
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#sobre-nosotros">Sobre Nosotros</a>
+                </li>
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#equipo-medico">Equipo Médico</a>
+                </li>
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#filosofia">Filosofía</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4
+                class="font-serif italic text-slate-900 dark:text-slate-100 mb-3 md:mb-4"
+            >
+                Servicios
+            </h4>
+            <ul class="space-y-4">
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#areas-intervencion">Áreas de Intervención</a>
+                </li>
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#psicologia-organizacional">Psicología Organizacional</a>
+                </li>
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4
+                class="font-serif italic text-slate-900 dark:text-slate-100 mb-3 md:mb-4"
+            >
+                Legal
+            </h4>
+            <ul class="space-y-4">
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#">Política de Privacidad</a>
+                </li>
+                <li>
+                    <a
+                        class="font-sans text-sm Manrope text-slate-500 hover:text-slate-900 dark:hover:text-white underline-offset-4 underline opacity-80 hover:opacity-100 transition-opacity"
+                        href="#">Términos de Servicio</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        class="max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 mt-6 md:mt-10 pt-4 md:pt-6 text-center md:text-left"
+    >
+        <p class="font-sans text-sm Manrope text-slate-400">
+            © 2024 Atelier Consultora Clínica. Todas las credenciales
+            verificadas.
+        </p>
+    </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Add smooth scrolling to footer links
+    document.querySelectorAll('footer a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e: Event) => {
+        if (!(e.target instanceof Node)) return;
+        e.preventDefault();
+        const currentAnchor = e.currentTarget;
+        if (!(currentAnchor instanceof HTMLAnchorElement)) return;
+        const href = currentAnchor.getAttribute('href');
+        if (!href) return;
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  });
+</script>

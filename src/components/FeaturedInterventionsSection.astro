@@ -1,0 +1,48 @@
+---
+// FeaturedInterventionsSection component - Single Responsibility: Featured interventions display
+const { id } = Astro.props;
+---
+
+<section id={id} class="py-24 md:py-32 px-8 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div>
+      <h2 class="font-headline text-4xl text-primary">Intervenciones Destacadas</h2>
+      <p class="text-secondary mt-2">Dispositivos clínicos diseñados para momentos críticos.</p>
+    </div>
+    <div class="text-primary font-bold border-b border-primary pb-1 flex items-center gap-2 cursor-pointer">
+      Ver todos los dispositivos
+      <span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-[800px] md:h-[600px]">
+    <div class="md:col-span-2 md:row-span-2 bg-primary-container rounded-2xl p-8 relative overflow-hidden group">
+      <img alt="Reunión Familiar" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700" data-alt="Una cálida y íntima sesión de terapia familiar con profesionales, enfatizando la conexión y comunicación empática" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbanZxlwKR55fJbeP9-7pWSzNVRmKZ0Cz9kbW05iyXaAiDBobtI-k1nVccaBRFtJtrVlfIR2AAvQPJ-bWrbG08rqeeUujgXY3od8HMAm4vdiGjudbAgtudBCBCni55SsjatqS8k8QY0EW4zQDriGUDtUVihiT479wQ785vrph6VtcTxfFti0h9-_HpspqqtJHIWyovMsYcEisYCXHz4I0PiLK1rHD8yJbbimSIyiRJ1o7LkFHH7a-K0IlH6R9KWWSGYtovuP9YvDC7" loading="lazy" />
+      <div class="relative z-10 h-full flex flex-col justify-end">
+        <h3 class="text-3xl font-headline text-white mb-4">Reuniones Familiares</h3>
+        <p class="text-primary-fixed max-w-sm">Mediación y abordaje de crisis en el núcleo familiar como eje de la recuperación.</p>
+      </div>
+    </div>
+    <div class="md:col-span-2 bg-secondary p-8 rounded-2xl flex flex-col justify-between group cursor-pointer hover:bg-primary transition-colors duration-500">
+      <div class="flex justify-between items-start">
+        <span class="material-symbols-outlined text-white text-3xl" data-icon="schedule">schedule</span>
+        <span class="material-symbols-outlined text-white/50" data-icon="north_east">north_east</span>
+      </div>
+      <div>
+        <h3 class="text-2xl font-headline text-white">Jornadas Intensivas</h3>
+        <p class="text-white/70 text-sm mt-2">Intervenciones de 48-72hs para desestabilización aguda.</p>
+      </div>
+    </div>
+    <div class="bg-tertiary-fixed-dim p-8 rounded-2xl flex flex-col justify-between group">
+      <span class="material-symbols-outlined text-on-tertiary-fixed text-3xl" data-icon="flight_takeoff">flight_takeoff</span>
+      <div>
+        <h3 class="text-xl font-headline text-on-tertiary-fixed">Viajes Terapéuticos</h3>
+      </div>
+    </div>
+    <div class="bg-white p-8 rounded-2xl flex flex-col justify-between border border-outline-variant group">
+      <span class="material-symbols-outlined text-error text-3xl" data-icon="emergency">emergency</span>
+      <div>
+        <h3 class="text-xl font-headline text-primary">Intervención en Crisis</h3>
+      </div>
+    </div>
+  </div>
+</section>

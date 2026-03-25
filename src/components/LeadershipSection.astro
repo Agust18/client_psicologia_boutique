@@ -1,0 +1,37 @@
+---
+// LeadershipSection component - Single Responsibility: Leadership display
+const { id } = Astro.props;
+---
+
+<section id={id} class="py-32 px-8 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto text-center mb-20">
+    <h2 class="font-headline text-4xl md:text-5xl text-primary">Dirección Médica y Clínica</h2>
+    <div class="h-1 w-24 bg-tertiary-fixed-dim mx-auto mt-6"></div>
+  </div>
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+    <!-- Dr. Demian Czerwonko -->
+    <div class="group">
+      <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-high relative mb-6">
+        <img alt="Dr. Demian Czerwonko" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Distinguished mature male doctor in professional medical attire with a calm, confident expression, soft indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACKQ5iuuuzqEBlWLzYmFgBBTb8bbClW3Cn3hmFLmTlXrR0UcaPxsQqjJkKgH3iLAQEeRWBi2aa5zmcqbGI4L5c7o6sEe4aG86nYtlYuZhVpST4sNfVFWGnaScYWDbphzKYC54RrNpAinpDnB2XuIdHE8NQLLPENw9YaXQ02FkHAI3yHPZIdc3PtsKimsq-rivJOaZ_7wWK5NLXRGfor5jwUaLOgk8Hc9aND0y0H5I1ekya6JiTdoMjRDHU904qzvuZPKCUK8JjsPpm" loading="lazy" />
+      </div>
+      <h3 class="font-headline text-2xl text-primary">Dr. Demian Czerwonko</h3>
+      <p class="font-label text-sm text-secondary uppercase tracking-wider mt-1">Médico Clínico Intensivista</p>
+    </div>
+    <!-- Dr. Sebastián Riboldi -->
+    <div class="group">
+      <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-high relative mb-6">
+        <img alt="Dr. Sebastián Riboldi" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Professional male psychiatrist in a modern office setting, friendly and intellectual appearance, sophisticated lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwoVVuhRShiiV6NAzhFDhGHYZhI3zYlQtG90CAcZCa3-ElpUPbdKbjtN-kP-vNNlea3PeSpQDU-sBXPG_jE17UeP2LM3dpUjXCWHsUO-PiqATPMOU-7poWOpTYjkIZb2W5RID5PXdBJyrhsaytWcFizV7w5eOuihCpJH3KgYiQoQpSADPfRVvc9UxVGA-h-UZQ95oA4F7lehaCzuTHDePOraSmG2JKkqsPCkgyKXHeumH-H2tl3WUNvrAR5OwpZ1nxxbsEoo7rXzoQ" loading="lazy" />
+      </div>
+      <h3 class="font-headline text-2xl text-primary">Dr. Sebastián Riboldi</h3>
+      <p class="font-label text-sm text-secondary uppercase tracking-wider mt-1">Médico Psiquiatra</p>
+    </div>
+    <!-- Lic. Diego Tripelli -->
+    <div class="group">
+      <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-high relative mb-6">
+        <img alt="Lic. Diego Tripelli" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Expert male clinical psychologist in a thoughtful pose, warm library-like background with soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIaWgV4J2WcrBn-d7TzfDbAg2v0NzoQ-J2U2w-bbzXIeY0VeWnhYWYXOsFfy3lq2g6Tnfy4k00ZExkxMlrCjM8N-O2cJbtfR_z-C5ba-JYC95cJDqI9lQTToPPRGqkZUTRXwq74k-MSmCv91HsGlg0V91fnd6ZVpd8K-6g50xgMosz4j08i_f3KZ4tkv4uhvB96RDQCz35-AuBwJggca0j-4HYb838Z44DsFG40W3V_cFEu9QGrtY371FSZFezDJajdh07GhV5y1x_" loading="lazy" />
+      </div>
+      <h3 class="font-headline text-2xl text-primary">Lic. Diego Tripelli</h3>
+      <p class="font-label text-sm text-secondary uppercase tracking-wider mt-1">Psicólogo Clínico - TCC</p>
+    </div>
+  </div>
+</section>

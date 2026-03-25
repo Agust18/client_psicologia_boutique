@@ -1,0 +1,131 @@
+---
+// HeroSection component - Single Responsibility: Hero display
+---
+
+<section id="inicio" class="relative min-h-[870px] flex items-center overflow-hidden px-8">
+  <div class="absolute inset-0 z-0">
+    <img alt="Professional clinical setting" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Modern high-end clinical consultation room with minimalist furniture, large windows, and soft natural morning light illuminating a clean space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0Aqp6GC6WtMXwtsR25dr7BXwYVgiKyEGzMA7V1uSwoWt4CCtvrPpj39oxtZQ2KKac0rvHIIEzpOXF8LklDhibnxnUqXOvD6HI7yKOPQx2ngQ3-FVwqpoq2WXdOrmpXt8WAyd3JrXdpY9P0pl4zESaCeiHne26iyCArgZ2TqmZBQy-2tO0ysQxT2lFmfcuCmMnCP43XxBBP5vUJrlN8KnwF6OUVw0eie3DTkxLVwd30-Mj2bNaRQg8uGjMOAus9hnjHoxXsD-LmJbg" loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="lg:col-span-7 animate-fade-in-up">
+      <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-on-primary leading-tight tracking-tight">
+        Atención focalizada en el <span class="italic text-tertiary-fixed-dim animate-pulse">paciente crítico</span>
+      </h1>
+      <p class="mt-8 font-body text-xl text-primary-fixed max-w-xl leading-relaxed animate-fade-in-up animation-delay-200">
+        Un abordaje integral y sistémico diseñado para casos de alta complejidad, donde la precisión médica se encuentra con la profundidad humana.
+      </p>
+      <div class="mt-12 flex flex-wrap gap-6 animate-fade-in-up animation-delay-400">
+        <button class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-4 rounded-md font-bold hover:bg-tertiary-fixed transition-all duration-300 transform hover:scale-105 hover:shadow-lg contact-button">
+          Solicitar Consulta
+        </button>
+        <button class="border-b-2 border-tertiary-fixed-dim text-white px-4 py-4 font-medium flex items-center gap-2 group hover:border-white transition-colors metodologia-button">
+          Nuestra Metodología
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-300" data-icon="arrow_forward">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  /* Mobile text and spacing refinements */
+  @media (max-width: 768px) {
+    #inicio {
+      min-height: 580px;
+      padding: 2.5rem 1rem;
+    }
+    #inicio h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+    }
+    #inicio p {
+      font-size: 1rem;
+    }
+    #inicio .mt-12 {
+      margin-top: 1.25rem;
+    }
+    #inicio button {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Parallax background effect
+    const heroSection = document.getElementById('inicio');
+    const heroBgImage = heroSection ? heroSection.querySelector('img') : null;
+
+    function updateHeroParallax() {
+      if (!heroSection || !heroBgImage) return;
+      const scrollY = window.scrollY;
+      const offset = Math.min(scrollY * 0.25, 120);
+      heroBgImage.style.transform = `translateY(${offset}px) scale(1.08)`;
+    }
+
+    window.addEventListener('scroll', updateHeroParallax);
+    window.addEventListener('resize', updateHeroParallax);
+
+    // Handle contact button click
+    const contactButton = document.querySelector('.contact-button');
+    if (contactButton) {
+      contactButton.addEventListener('click', () => {
+        const contactSection = document.getElementById('contacto');
+        if (contactSection) {
+          contactSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    }
+
+    // Handle metodologia button click
+    const metodologiaButton = document.querySelector('.metodologia-button');
+    if (metodologiaButton) {
+      metodologiaButton.addEventListener('click', () => {
+        const filosofiaSection = document.getElementById('filosofia');
+        if (filosofiaSection) {
+          filosofiaSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    }
+
+    // initial parallax state
+    updateHeroParallax();
+  });
+</script>

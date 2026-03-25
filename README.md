@@ -1,43 +1,78 @@
-# Astro Starter Kit: Minimal
+# Atelier Medical Landing Page
 
-```sh
-npm create astro@latest -- --template minimal
+Proyecto Astro para la landing page de Atelier Medical, una consultora integral e interdisciplinaria.
+
+## Características
+
+- **Framework**: Astro para rendimiento óptimo
+- **Estilos**: Tailwind CSS con configuración personalizada
+- **Modular**: Componentes separados por responsabilidad (SOLID)
+- **SEO**: Meta tags optimizados
+- **Optimización**: Imágenes con lazy loading
+- **Escalable**: Estructura de carpetas clara para futuras expansiones
+
+## Estructura del Proyecto
+
+```
+src/
+├── components/
+│   ├── NavBar.astro
+│   ├── HeroSection.astro
+│   ├── AboutSection.astro
+│   ├── LeadershipSection.astro
+│   ├── BoutiquePhilosophySection.astro
+│   ├── AreasInterventionSection.astro
+│   ├── FeaturedInterventionsSection.astro
+│   ├── OrganizationalPsychologySection.astro
+│   ├── ContactSection.astro
+│   └── Footer.astro
+├── layouts/
+│   └── BaseLayout.astro
+├── pages/
+│   └── index.astro
+└── styles/
+    └── global.css
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Instalación y Uso
 
-## 🚀 Project Structure
+1. Instalar dependencias:
+   ```bash
+   npm install
+   ```
 
-Inside of your Astro project, you'll see the following folders and files:
+2. Iniciar servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+3. Construir para producción:
+   ```bash
+   npm run build
+   ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+4. Vista previa de producción:
+   ```bash
+   npm run preview
+   ```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Principios SOLID
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **Single Responsibility**: Cada componente maneja una sola sección
+- **Open-Closed**: Componentes extensibles sin modificar código existente
+- **Liskov Substitution**: Componentes intercambiables
+- **Interface Segregation**: Interfaces minimalistas
+- **Dependency Inversion**: Dependencias abstractas
 
-## 🧞 Commands
+## SEO y Optimización
 
-All commands are run from the root of the project, from a terminal:
+- Meta tags en BaseLayout
+- Fuentes optimizadas con preload
+- Imágenes con lazy loading
+- Estructura semántica HTML
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Escalabilidad
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Componentes reutilizables
+- Configuración centralizada de estilos
+- Estructura modular para agregar nuevas secciones
