@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Indica dónde está tu sitemap (cambia el dominio por el tuyo real)
-Sitemap: https://ateliermedical.com/sitemap-index.xml
+Sitemap: https://client-psicologia-boutique.pages.dev/
