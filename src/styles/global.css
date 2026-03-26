@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 @theme {
   --color-primary-fixed-dim: #b4c6f7;
   --color-surface-container-lowest: #ffffff;
@@ -51,14 +49,8 @@
   --color-inverse-primary: #b4c6f7;
   --color-on-tertiary-fixed: #261900;
 
- --font-family-headline: "Newsreader", Times, serif;
-  --font-family-body: "Manrope", Arial, sans-serif;
-  --font-family-label: "Manrope", Arial, sans-serif;
-
-  --border-radius-DEFAULT: 0.125rem;
-  --border-radius-lg: 0.25rem;
-  --border-radius-xl: 0.5rem;
-  --border-radius-full: 0.75rem;
+ --font-family-headline: "Newsreader", serif;
+  --font-family-body: "Manrope", sans-serif;
 }
 
 
@@ -94,5 +86,26 @@
     margin-top: 1.25rem !important;
     margin-bottom: 1.25rem !important;
   }
+}
+
+/* Configuración para Fontsource Variable */
+.material-symbols-outlined {
+  /* Forzamos el nombre de la fuente de Fontsource */
+  font-family: 'Material Symbols Outlined Variable' !important;
+  
+  /* Esto reemplaza al font-weight tradicional en fuentes variables */
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  
+  /* Soporte para que se vea bien en todos los navegadores */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
