@@ -88,24 +88,3 @@
   }
 }
 
-/* Configuración para Fontsource Variable */
-.material-symbols-outlined {
-  /* Forzamos el nombre de la fuente de Fontsource */
-  font-family: 'Material Symbols Outlined Variable' !important;
-  
-  /* Esto reemplaza al font-weight tradicional en fuentes variables */
-  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-  
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  
-  /* Soporte para que se vea bien en todos los navegadores */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-

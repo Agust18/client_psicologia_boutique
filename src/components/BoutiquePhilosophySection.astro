@@ -3,64 +3,128 @@
 const { id } = Astro.props;
 ---
 
-<section id={id} class="py-24 md:py-32 px-8 bg-primary text-on-primary relative overflow-hidden">
-  <div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none" aria-hidden="true">
-    <svg class="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,200 Q100,0 200,200 T400,200" fill="none" stroke="white" stroke-width="2"></path>
-      <path d="M0,220 Q100,20 200,220 T400,220" fill="none" stroke="white" stroke-width="1"></path>
+<section
+  id={id}
+  class="py-24 md:py-32 px-8 bg-primary text-on-primary relative overflow-hidden"
+>
+  <div
+    class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none"
+    aria-hidden="true"
+  >
+    <svg
+      class="w-full h-full"
+      viewBox="0 0 400 400"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0,200 Q100,0 200,200 T400,200"
+        fill="none"
+        stroke="white"
+        stroke-width="2"></path>
+      <path
+        d="M0,220 Q100,20 200,220 T400,220"
+        fill="none"
+        stroke="white"
+        stroke-width="1"></path>
     </svg>
   </div>
 
   <div class="max-w-7xl mx-auto relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-      
       <div>
-        <span class="font-label text-sm uppercase tracking-widest text-tertiary-fixed-dim block mb-6 font-bold">
+        <span
+          class="font-label text-sm uppercase tracking-widest text-tertiary-fixed-dim block mb-6 font-bold"
+        >
           Filosofía Boutique
         </span>
         <h2 class="font-headline text-5xl md:text-6xl mb-10 leading-tight">
-          Traje a medida, no modelos <span class="italic text-tertiary-fixed-dim">enlatados.</span>
+          Traje a medida, no modelos <span
+            class="italic text-tertiary-fixed-dim">enlatados.</span
+          >
         </h2>
       </div>
 
       <div class="space-y-12">
-        
         <div class="flex gap-6">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center">
-            <span class="material-symbols-outlined text-tertiary-fixed-dim" aria-hidden="true">architecture</span>
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 -960 960 960"
+              fill="currentColor"
+              class="text-tertiary-fixed-dim"
+              aria-hidden="true"
+            >
+              <path
+                d="M200-160v-240h80v160h160v80H200Zm320 0v-80h160v-160h80v240H520ZM160-520v-240h240v80H240v160h-80Zm560 0v-160H560v-80h240v240h-80ZM320-320v-320h320v320H320Zm80-80h160v-160H400v160Z"
+              ></path>
+            </svg>
           </div>
           <div>
             <h3 class="font-headline text-2xl mb-3">Diseño Personalizado</h3>
-            <p class="text-slate-300 leading-relaxed font-body">
-              Cada intervención se construye desde cero, respetando la singularidad biológica y psíquica del paciente.
+            <p class="text-white/70 leading-relaxed font-body">
+              Cada intervención se construye desde cero, respetando la
+              singularidad biológica y psíquica del paciente.
             </p>
           </div>
         </div>
 
         <div class="flex gap-6">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center">
-            <span class="material-symbols-outlined text-tertiary-fixed-dim" aria-hidden="true">psychology</span>
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 -960 960 960"
+              fill="currentColor"
+              class="text-tertiary-fixed-dim"
+              aria-hidden="true"
+            >
+              <path
+                d="M480-80q-80 0-150-30t-122-82q-52-52-82-122t-30-150q0-78 29-147t80-121l49 61q-34 40-52 90t-18 104q0 119 82.5 203T480-160q11 0 22-1t21-3l12 78q-18 4-37 5t-38 1Zm181-80-60-60q21-13 40-29t36-35l60 52q-23 26-49 47.5T661-160Zm115-161-55-58q14-20 25-42.5t18-46.5l77 22q-11 36-28.5 69.5T776-321Zm44-245-78-14q4-24 5-47t-2-47l79-11q6 32 7.5 66t-11.5 73ZM676-788l-27-75q34-14 69-21t71-3l-10 80q-26-2-51.5 3.5T676-788Zm-196 28q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-920q0-33-23.5-56.5T480-1000q-33 0-56.5 23.5T400-920q0 33 23.5 56.5T480-840Zm-214 16-56-56q35-36 80.5-57.5T387-1060l21 77q-35 12-65.5 28.5T266-824Z"
+              ></path>
+            </svg>
           </div>
           <div>
             <h3 class="font-headline text-2xl mb-3">Subjetividad como Dato</h3>
-            <p class="text-slate-300 leading-relaxed font-body">
-              No solo tratamos patologías; escuchamos al sujeto detrás del síntoma para una recuperación sostenible.
+            <p class="text-white/70 leading-relaxed font-body">
+              No solo tratamos patologías; escuchamos al sujeto detrás del
+              síntoma para una recuperación sostenible.
             </p>
           </div>
         </div>
 
         <div class="flex gap-6">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center">
-            <span class="material-symbols-outlined text-tertiary-fixed-dim" aria-hidden="true">group_work</span>
+          <div
+            class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 -960 960 960"
+              fill="currentColor"
+              class="text-tertiary-fixed-dim"
+              aria-hidden="true"
+            >
+              <path
+                d="M280-520q-33 0-56.5-23.5T200-600q0-33 23.5-56.5T280-680q33 0 56.5 23.5T360-600q0 33-23.5 56.5T280-520Zm400 0q-33 0-56.5-23.5T600-600q0-33 23.5-56.5T680-680q33 0 56.5 23.5T760-600q0 33-23.5 56.5T680-520ZM480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm0-440q-33 0-56.5-23.5T400-640q0-33 23.5-56.5T480-720q33 0 56.5 23.5T560-640q0 33-23.5 56.5T480-560Z"
+              ></path>
+            </svg>
           </div>
           <div>
             <h3 class="font-headline text-2xl mb-3">Sincronía Disciplinaria</h3>
-            <p class="text-slate-300 leading-relaxed font-body">
-              El médico, el psiquiatra y el psicólogo trabajan en tiempo real, no en silos aislados.
+            <p class="text-white/70 leading-relaxed font-body">
+              El médico, el psiquiatra y el psicólogo trabajan en tiempo real,
+              no en silos aislados.
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
