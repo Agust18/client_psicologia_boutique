@@ -59,6 +59,8 @@
   --border-radius-full: 0.75rem;
 }
 
+
+
 /* Reducir espacio vertical en mobile para secciones */
 @media (max-width: 768px) {
   section[id] {
@@ -81,3 +83,7 @@
     margin-bottom: 1.25rem !important;
   }
 }
+
+
+
+

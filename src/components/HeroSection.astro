@@ -104,13 +104,12 @@ import heroImg from "../assets/images/hero-main.jpg";
 
     /* Mobile text and spacing refinements */
     @media (max-width: 768px) {
-        #inicio {
-            min-height: 580px;
-            padding: 2.5rem 1rem;
-        }
+       
         #inicio h1 {
-            font-size: 2.2rem;
-            line-height: 1.2;
+            min-height: 100vh; /* Mejor usar el alto de pantalla completo */
+        padding-top: 80px; /* El alto de tu Navbar aproximadamente */
+        padding-left: 1rem;
+        padding-right: 1rem;
         }
         #inicio p {
             font-size: 1rem;
