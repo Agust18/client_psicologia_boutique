@@ -3,68 +3,70 @@
 const { id } = Astro.props;
 ---
 
-<section id={id} class="py-32 px-8 bg-surface">
-  <div class="max-w-7xl mx-auto mb-20">
+<section id={id} class="py-24 md:py-32 px-8 bg-surface">
+  <div class="max-w-7xl mx-auto mb-16 md:mb-20">
     <h2 class="font-headline text-4xl text-primary mb-4">Áreas de Intervención</h2>
     <p class="text-secondary max-w-2xl text-lg">Especialidades integradas para una gestión clínica de excelencia.</p>
   </div>
+
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- Clinical Medicine -->
-    <div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)] border-b-4 border-tertiary-fixed-dim hover:-translate-y-2 transition-transform">
-      <span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="stethoscope">stethoscope</span>
+    
+    <article class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)] border-b-4 border-tertiary-fixed-dim hover:-translate-y-2 transition-transform">
+      <span class="material-symbols-outlined text-4xl text-primary mb-8 block" aria-hidden="true">stethoscope</span>
       <h3 class="font-headline text-2xl text-primary mb-4">Medicina Clínica</h3>
-      <ul class="space-y-4 text-on-surface-variant font-body">
+      <ul class="space-y-4 text-slate-700 font-body">
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Seguimiento de enfermedades crónicas complejas.
         </li>
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Gestión de estudios diagnósticos avanzados.
         </li>
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Coordinación de interconsultas de especialistas.
         </li>
       </ul>
-    </div>
-    <!-- Psychiatry -->
-    <div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)] border-b-4 border-tertiary-fixed-dim hover:-translate-y-2 transition-transform">
-      <span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="medication">medication</span>
+    </article>
+
+    <article class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)] border-b-4 border-tertiary-fixed-dim hover:-translate-y-2 transition-transform">
+      <span class="material-symbols-outlined text-4xl text-primary mb-8 block" aria-hidden="true">medication</span>
       <h3 class="font-headline text-2xl text-primary mb-4">Psiquiatría</h3>
-      <ul class="space-y-4 text-on-surface-variant font-body">
+      <ul class="space-y-4 text-slate-700 font-body">
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Terapia sistémica y estabilización farmacológica.
         </li>
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Visitas domiciliarias para pacientes con movilidad reducida.
         </li>
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Abordaje de cuadros psiquiátricos refractarios.
         </li>
       </ul>
-    </div>
-    <!-- Psychology -->
-    <div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)] border-b-4 border-tertiary-fixed-dim hover:-translate-y-2 transition-transform">
-      <span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="self_improvement">self_improvement</span>
+    </article>
+
+    <article class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.04)] border-b-4 border-tertiary-fixed-dim hover:-translate-y-2 transition-transform">
+      <span class="material-symbols-outlined text-4xl text-primary mb-8 block" aria-hidden="true">self_improvement</span>
       <h3 class="font-headline text-2xl text-primary mb-4">Psicología Clínica</h3>
-      <ul class="space-y-4 text-on-surface-variant font-body">
+      <ul class="space-y-4 text-slate-700 font-body">
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Evaluación neurocognitiva y neuropsicológica.
         </li>
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Intervención en sistemas familiares complejos.
         </li>
         <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" data-icon="check_circle">check_circle</span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
           Terapia Cognitivo-Conductual de alta especificidad.
         </li>
       </ul>
-    </div>
+    </article>
+
   </div>
 </section>

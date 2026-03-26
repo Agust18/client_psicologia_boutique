@@ -1,60 +1,189 @@
 ---
 import { Image } from 'astro:assets';
-// Importaciones de los activos procesados
+// Asegúrate de que las rutas sean correctas
 import fotoDemian from "../assets/images/leadership.jpg";
 import fotoSebastian from "../assets/images/leadership2.jpg";
-import fotoDiego from "../assets/images/leadership3.jpg";;
+import fotoDiego from "../assets/images/leadership3.jpg";
 
-// LeadershipSection component - Single Responsibility: Leadership display
 const { id } = Astro.props;
 ---
 
-<section id={id} class="py-32 px-8 bg-surface-container-low">
-  <div class="max-w-7xl mx-auto text-center mb-20">
-    <h2 class="font-headline text-4xl md:text-5xl text-primary">Dirección Médica y Clínica</h2>
-    <div class="h-1 w-24 bg-tertiary-fixed-dim mx-auto mt-6"></div>
+<section id={id} class="py-24 md:py-32 px-8 bg-surface-container-low scroll-reveal overflow-hidden">
+  <div class="max-w-7xl mx-auto text-center mb-16 md:mb-20">
+    <h2 class="font-headline text-4xl md:text-5xl text-primary leading-tight">Dirección Médica y Clínica</h2>
+    <div class="h-1 w-24 bg-tertiary-fixed-dim mx-auto mt-6" aria-hidden="true"></div>
   </div>
 
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
     
-    <div class="group">
-      <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-high relative mb-6">
+    <article class="group text-center md:text-left card-especialista">
+      <div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer">
         <Image 
           src={fotoDemian} 
-          alt="Dr. Demian Czerwonko" 
-          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          alt="Dr. Demian Czerwonko, Médico Clínico Intensivista" 
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:blur-sm transition-all duration-700"
           loading="lazy"
+          decoding="async"
+          width={600}
+          height={800}
         />
-      </div>
-      <h3 class="font-headline text-2xl text-primary">Dr. Demian Czerwonko</h3>
-      <p class="font-label text-sm text-secondary uppercase tracking-wider mt-1">Médico Clínico Intensivista</p>
-    </div>
 
-    <div class="group">
-      <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-high relative mb-6">
+        <div class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left">
+          <ul class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Especialista en Medicina Interna y Cuidados Críticos.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Más de 15 años de experiencia en gestión de paciente crítico.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Coordinador de Terapia Intensiva en Atelier Medical.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="font-headline text-2xl text-primary">Dr. Demian Czerwonko</h3>
+      <p class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold">
+        Médico Clínico Intensivista
+      </p>
+    </article>
+
+    <article class="group text-center md:text-left card-especialista">
+      <div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer">
         <Image 
           src={fotoSebastian} 
-          alt="Dr. Sebastián Riboldi" 
-          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          alt="Dr. Sebastián Riboldi, Médico Psiquiatra" 
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:blur-sm transition-all duration-700"
           loading="lazy"
+          decoding="async"
+          width={600}
+          height={800}
         />
+        <div class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left">
+          <ul class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Médico Psiquiatra con enfoque sistémico.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Experto en estabilización farmacológica de cuadros complejos.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Dirección de dispositivos clínicos residenciales.
+            </li>
+          </ul>
+        </div>
       </div>
       <h3 class="font-headline text-2xl text-primary">Dr. Sebastián Riboldi</h3>
-      <p class="font-label text-sm text-secondary uppercase tracking-wider mt-1">Médico Psiquiatra</p>
-    </div>
+      <p class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold">
+        Médico Psiquiatra
+      </p>
+    </article>
 
-    <div class="group">
-      <div class="aspect-[3/4] overflow-hidden rounded-lg bg-surface-container-high relative mb-6">
+    <article class="group text-center md:text-left card-especialista">
+      <div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer">
         <Image 
           src={fotoDiego} 
-          alt="Lic. Diego Tripelli" 
-          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          alt="Lic. Diego Tripelli, Psicólogo Clínico" 
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:blur-sm transition-all duration-700"
           loading="lazy"
+          decoding="async"
+          width={600}
+          height={800}
         />
+        <div class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left">
+          <ul class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Psicólogo Clínico - Terapia Cognitivo Conductual.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Abordaje de cuadros refractarios y desestabilización aguda.
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              Evaluación neurocognitiva y neuropsicológica.
+            </li>
+          </ul>
+        </div>
       </div>
       <h3 class="font-headline text-2xl text-primary">Lic. Diego Tripelli</h3>
-      <p class="font-label text-sm text-secondary uppercase tracking-wider mt-1">Psicólogo Clínico - TCC</p>
-    </div>
+      <p class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold">
+        Psicólogo Clínico - TCC
+      </p>
+    </article>
 
   </div>
 </section>
+
+<script>
+  // En móviles reales (iPhone, etc.), el :hover no funciona de forma intuitiva.
+  // Necesitamos JavaScript para que el primer toque abra la información y el segundo toque la cierre o siga el enlace.
+  
+  function initCardToggles() {
+    const cards = document.querySelectorAll('.card-especialista .aspect-\\[3\\/4\\]');
+    
+    cards.forEach(card => {
+      card.addEventListener('touchstart', (e) => {
+        // Obtenemos el contenedor 'group' para forzar las clases de Tailwind
+        const groupElement = card.closest('.group');
+        
+        // Si no está abierto, prevenimos la acción por defecto (si hubiera link) y lo abrimos
+        if (!groupElement?.classList.contains('mobile-active')) {
+          e.preventDefault();
+          // Cerramos cualquier otra tarjeta abierta
+          document.querySelectorAll('.mobile-active').forEach(openCard => {
+            openCard.classList.remove('mobile-active');
+          });
+          // Abrimos esta tarjeta
+          groupElement?.classList.add('mobile-active');
+        } else {
+          // Si ya está abierto, el segundo toque sigue la acción por defecto o lo cierra
+          // groupElement?.classList.remove('mobile-active'); 
+          // En un sitio profesional, lo mejor es dejar que el segundo toque haga 'clic' si hay un link.
+        }
+      }, { passive: false });
+    });
+    
+    // Si tocas fuera de las tarjetas, cerramos todas
+    document.addEventListener('touchstart', (e) => {
+      if (! (e.target as Element).closest('.card-especialista')) {
+        document.querySelectorAll('.mobile-active').forEach(card => {
+          card.classList.remove('mobile-active');
+        });
+      }
+    });
+  }
+
+  // Ejecutamos en Astro cuando la página carga
+  document.addEventListener('DOMContentLoaded', initCardToggles);
+  document.addEventListener('astro:page-load', initCardToggles); // Para Astro View Transitions
+</script>
+
+<style is:global>
+  /* Fix para forzar el estado de hover en móvil desde JS */
+  @media (max-width: 768px) {
+    .group.mobile-active .group-hover\:opacity-100 {
+      opacity: 1;
+    }
+    .group.mobile-active .group-hover\:blur-sm {
+      filter: blur(4px);
+    }
+    .group.mobile-active .group-hover\:scale-105 {
+      transform: scale(1.05);
+    }
+    .group.mobile-active .group-hover\:translate-y-0 {
+      transform: translateY(0);
+    }
+    .group.mobile-active .grayscale {
+      filter: grayscale(0%); /* En móvil, al tocar forzamos que sea color */
+    }
+  }
+</style>

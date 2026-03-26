@@ -2,57 +2,59 @@
 // Footer component - Single Responsibility: Footer display
 ---
 
-<footer class="w-full py-8 md:py-16 px-4 md:px-6 mt-auto bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<footer class="w-full py-12 md:py-16 px-6 mt-auto bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
         <div class="md:col-span-1">
-            <div class="text-lg font-serif italic text-slate-900 dark:text-slate-100 mb-4">
+            <div class="text-xl font-serif italic text-slate-900 dark:text-slate-100 mb-4">
                 Atelier Medical
             </div>
-            <p class="font-sans text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p class="font-sans text-sm text-slate-700 dark:text-slate-400 leading-relaxed">
                 Consultoría médica boutique dedicada a la excelencia en casos de
                 alta complejidad interdisciplinaria.
             </p>
         </div>
 
-        <div>
-            <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-4 text-base">
+        <nav aria-label="Navegación del pie de página">
+            <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-5 text-base font-bold">
                 Navegación
             </h3>
-            <ul class="space-y-3">
+            <ul class="space-y-4">
                 {['Inicio', 'Sobre Nosotros', 'Equipo Médico', 'Filosofía'].map((item) => (
                     <li>
-                        <a href={`#${item.toLowerCase().replace(' ', '-')}`} 
-                           class="font-sans text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors underline-offset-4 hover:underline">
+                        <a href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`} 
+                           class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors underline-offset-4 hover:underline py-1 inline-block">
                             {item}
                         </a>
                     </li>
                 ))}
             </ul>
-        </div>
+        </nav>
 
-        <div>
-            <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-4 text-base">
+        <nav aria-label="Servicios">
+            <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-5 text-base font-bold">
                 Servicios
             </h3>
-            <ul class="space-y-3">
-                <li><a href="#areas-intervencion" class="font-sans text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors">Áreas de Intervención</a></li>
-                <li><a href="#psicologia-organizacional" class="font-sans text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors">Psicología Organizacional</a></li>
-                <li><a href="#contacto" class="font-sans text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors">Contacto</a></li>
+            <ul class="space-y-4">
+                <li><a href="#areas-intervencion" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block">Áreas de Intervención</a></li>
+                <li><a href="#psicologia-organizacional" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block">Psicología Organizacional</a></li>
+                <li><a href="#contacto" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block font-medium">Contacto</a></li>
             </ul>
-        </div>
+        </nav>
 
         <div>
-            <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-4 text-base">
+            <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-5 text-base font-bold">
                 Legal
             </h3>
-            <ul class="space-y-3">
-                <li><a href="#" class="font-sans text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors">Política de Privacidad</a></li>
-                <li><a href="#" class="font-sans text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors">Términos de Servicio</a></li>
+            <ul class="space-y-4">
+                <li><a href="/privacidad" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block">Política de Privacidad</a></li>
+                <li><a href="/terminos" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block">Términos de Servicio</a></li>
             </ul>
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 mt-10 pt-6 text-center md:text-left">
+    <div class="max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 mt-12 pt-8 text-center md:text-left">
         <p class="font-sans text-xs md:text-sm text-slate-500 dark:text-slate-500">
             © {new Date().getFullYear()} Atelier Medical. Todos los derechos reservados. <br class="md:hidden" /> Credenciales verificadas.
         </p>

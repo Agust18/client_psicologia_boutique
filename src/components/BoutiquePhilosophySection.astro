@@ -3,47 +3,64 @@
 const { id } = Astro.props;
 ---
 
-<section id={id} class="py-32 px-8 bg-primary text-on-primary relative overflow-hidden">
-  <div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<section id={id} class="py-24 md:py-32 px-8 bg-primary text-on-primary relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none" aria-hidden="true">
     <svg class="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,200 Q100,0 200,200 T400,200" fill="none" stroke="white" stroke-width="2"></path>
       <path d="M0,220 Q100,20 200,220 T400,220" fill="none" stroke="white" stroke-width="1"></path>
     </svg>
   </div>
+
   <div class="max-w-7xl mx-auto relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+      
       <div>
-        <span class="font-label text-sm uppercase tracking-widest text-tertiary-fixed-dim block mb-6">Filosofía Boutique</span>
-        <h2 class="font-headline text-5xl md:text-6xl mb-10 leading-tight">Traje a medida, no modelos <span class="italic text-tertiary-fixed-dim">enlatados.</span></h2>
+        <span class="font-label text-sm uppercase tracking-widest text-tertiary-fixed-dim block mb-6 font-bold">
+          Filosofía Boutique
+        </span>
+        <h2 class="font-headline text-5xl md:text-6xl mb-10 leading-tight">
+          Traje a medida, no modelos <span class="italic text-tertiary-fixed-dim">enlatados.</span>
+        </h2>
       </div>
+
       <div class="space-y-12">
+        
         <div class="flex gap-6">
           <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center">
-            <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="architecture">architecture</span>
+            <span class="material-symbols-outlined text-tertiary-fixed-dim" aria-hidden="true">architecture</span>
           </div>
           <div>
-            <h4 class="font-headline text-2xl mb-3">Diseño Personalizado</h4>
-            <p class="text-primary-fixed leading-relaxed opacity-80">Cada intervención se construye desde cero, respetando la singularidad biológica y psíquica del paciente.</p>
+            <h3 class="font-headline text-2xl mb-3">Diseño Personalizado</h3>
+            <p class="text-slate-300 leading-relaxed font-body">
+              Cada intervención se construye desde cero, respetando la singularidad biológica y psíquica del paciente.
+            </p>
           </div>
         </div>
+
         <div class="flex gap-6">
           <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center">
-            <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="psychology">psychology</span>
+            <span class="material-symbols-outlined text-tertiary-fixed-dim" aria-hidden="true">psychology</span>
           </div>
           <div>
-            <h4 class="font-headline text-2xl mb-3">Subjetividad como Dato</h4>
-            <p class="text-primary-fixed leading-relaxed opacity-80">No solo tratamos patologías; escuchamos al sujeto detrás del síntoma para una recuperación sostenible.</p>
+            <h3 class="font-headline text-2xl mb-3">Subjetividad como Dato</h3>
+            <p class="text-slate-300 leading-relaxed font-body">
+              No solo tratamos patologías; escuchamos al sujeto detrás del síntoma para una recuperación sostenible.
+            </p>
           </div>
         </div>
+
         <div class="flex gap-6">
           <div class="flex-shrink-0 w-12 h-12 rounded-full border border-tertiary-fixed-dim flex items-center justify-center">
-            <span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="group_work">group_work</span>
+            <span class="material-symbols-outlined text-tertiary-fixed-dim" aria-hidden="true">group_work</span>
           </div>
           <div>
-            <h4 class="font-headline text-2xl mb-3">Sincronía Disciplinaria</h4>
-            <p class="text-primary-fixed leading-relaxed opacity-80">El médico, el psiquiatra y el psicólogo trabajan en tiempo real, no en silos aislados.</p>
+            <h3 class="font-headline text-2xl mb-3">Sincronía Disciplinaria</h3>
+            <p class="text-slate-300 leading-relaxed font-body">
+              El médico, el psiquiatra y el psicólogo trabajan en tiempo real, no en silos aislados.
+            </p>
           </div>
         </div>
+
       </div>
     </div>
   </div>

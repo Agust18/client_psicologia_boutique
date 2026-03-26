@@ -1,43 +1,59 @@
 ---
 import { Image } from 'astro:assets';
 import aboutImg from "../assets/images/about.jpg";
-// AboutSection component - Single Responsibility: About display
 const { id } = Astro.props;
 ---
 
-<section id={id} class="py-24 md:py-32 px-8 bg-surface scroll-reveal">
+<section id={id} class="py-24 md:py-32 px-8 bg-surface scroll-reveal overflow-hidden">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-      <div class="lg:col-span-5 relative animate-on-scroll">
-        <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+      
+      <figure class="lg:col-span-5 relative animate-on-scroll m-0">
+        <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 bg-slate-100">
           <Image
             src={aboutImg}
-            alt="Medical Consultation"
+            alt="Profesionales médicos en una sesión de consulta integral"
             class="w-full h-full object-cover"
             loading="lazy"
-            height={1000}  
+            decoding="async"
             format="webp"
             quality={80}
-            width={800}    
+            width={800}
+            height={1000}
           />
         </div>
-        <div class="absolute -bottom-10 -right-10 bg-white p-8 rounded-lg shadow-xl max-w-xs hidden md:block animate-on-scroll animation-delay-300 hover:shadow-2xl transition-shadow duration-300">
-          <p class="font-headline italic text-2xl text-primary">"La subjetividad como dato objetivo."</p>
-        </div>
-      </div>
+        
+        <figcaption class="absolute -bottom-10 -right-10 bg-white p-8 rounded-lg shadow-xl max-w-xs hidden md:block animate-on-scroll animation-delay-300 hover:shadow-2xl transition-shadow duration-300 border-l-4 border-primary">
+          <p class="font-headline italic text-2xl text-primary leading-tight">
+            "La subjetividad como dato objetivo."
+          </p>
+        </figcaption>
+      </figure>
+
       <div class="lg:col-span-7 animate-on-scroll animation-delay-200">
-        <span class="font-label text-sm uppercase tracking-widest text-secondary font-bold block mb-4">Sobre Nosotros</span>
-        <h2 class="font-headline text-4xl md:text-5xl text-primary leading-tight mb-8">Abordaje Integral y Sistémico</h2>
-        <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
-          <p>Somos un equipo orientado al abordaje integral del paciente crítico, operando bajo una filosofía que trasciende la medicina tradicional fragmentada.</p>
-          <p class="font-medium text-primary">Consideramos al individuo como un sistema dinámico y a la familia como una organización viva que requiere intervención coordinada y estratégica.</p>
-          <p>Nuestro modelo no es una plantilla predefinida; es un proceso de co-construcción donde cada trayectoria terapéutica se diseña a medida de la realidad clínica y emocional del consultante.</p>
+        <span class="font-label text-sm uppercase tracking-widest text-secondary font-extrabold block mb-4">
+          Sobre Nosotros
+        </span>
+        <h2 class="font-headline text-4xl md:text-5xl text-primary leading-tight mb-8">
+          Abordaje Integral y Sistémico
+        </h2>
+        
+        <div class="space-y-6 text-slate-700 text-lg leading-relaxed">
+          <p>
+            Somos un equipo orientado al abordaje integral del paciente crítico, operando bajo una filosofía que trasciende la medicina tradicional fragmentada.
+          </p>
+          <p class="font-semibold text-primary">
+            Consideramos al individuo como un sistema dinámico y a la familia como una organización viva que requiere intervención coordinada y estratégica.
+          </p>
+          <p>
+            Nuestro modelo no es una plantilla predefinida; es un proceso de co-construcción donde cada trayectoria terapéutica se diseña a medida de la realidad clínica y emocional del consultante.
+          </p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
-
 <style>
   .scroll-reveal {
     opacity: 0;
