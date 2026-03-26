@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 // Asegúrate de que las rutas sean correctas
 import fotoDemian from "../assets/images/leadership.jpg";
 import fotoSebastian from "../assets/images/leadership2.jpg";
@@ -8,38 +8,87 @@ import fotoDiego from "../assets/images/leadership3.jpg";
 const { id } = Astro.props;
 ---
 
-<section id={id} class="py-24 md:py-32 px-8 bg-surface-container-low scroll-reveal overflow-hidden">
+<section
+  id={id}
+  class="py-24 md:py-32 px-8 bg-surface-container-low scroll-reveal overflow-hidden"
+>
   <div class="max-w-7xl mx-auto text-center mb-16 md:mb-20">
-    <h2 class="font-headline text-4xl md:text-5xl text-primary leading-tight">Dirección Médica y Clínica</h2>
-    <div class="h-1 w-24 bg-tertiary-fixed-dim mx-auto mt-6" aria-hidden="true"></div>
+    <h2 class="font-headline text-4xl md:text-5xl text-primary leading-tight">
+      Dirección Médica y Clínica
+    </h2>
+    <div class="h-1 w-24 bg-tertiary-fixed-dim mx-auto mt-6" aria-hidden="true">
+    </div>
   </div>
 
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-    
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16"
+  >
     <article class="group text-center md:text-left card-especialista">
-      <div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer">
-        <Image 
-          src={fotoDemian} 
-          alt="Dr. Demian Czerwonko, Médico Clínico Intensivista" 
+      <div
+        class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer"
+      >
+        <Image
+          src={fotoDemian}
+          alt="Dr. Demian Czerwonko, Médico Clínico Intensivista"
           class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:blur-sm transition-all duration-700"
           loading="lazy"
           decoding="async"
-          width={400}
-          height={533}
+          width={500}
+          height={667}
         />
 
-        <div class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left">
-          <ul class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+        <div
+          class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left"
+        >
+          <ul
+            class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+          >
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Especialista en Medicina Interna y Cuidados Críticos.
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Más de 15 años de experiencia en gestión de paciente crítico.
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Coordinador de Terapia Intensiva en Atelier Medical.
             </li>
           </ul>
@@ -47,124 +96,219 @@ const { id } = Astro.props;
       </div>
 
       <h3 class="font-headline text-2xl text-primary">Dr. Demian Czerwonko</h3>
-      <p class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold">
+      <p
+        class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold"
+      >
         Médico Clínico Intensivista
       </p>
     </article>
 
     <article class="group text-center md:text-left card-especialista">
-      <div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer">
-        <Image 
-          src={fotoSebastian} 
-          alt="Dr. Sebastián Riboldi, Médico Psiquiatra" 
+      <div
+        class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer"
+      >
+        <Image
+          src={fotoSebastian}
+          alt="Dr. Sebastián Riboldi, Médico Psiquiatra"
           class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:blur-sm transition-all duration-700"
           loading="lazy"
           decoding="async"
-          width={600}
-          height={800}
+          width={500}
+          height={667}
         />
-        <div class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left">
-          <ul class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+        <div
+          class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left"
+        >
+          <ul
+            class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+          >
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Médico Psiquiatra con enfoque sistémico.
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Experto en estabilización farmacológica de cuadros complejos.
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Dirección de dispositivos clínicos residenciales.
             </li>
           </ul>
         </div>
       </div>
       <h3 class="font-headline text-2xl text-primary">Dr. Sebastián Riboldi</h3>
-      <p class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold">
+      <p
+        class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold"
+      >
         Médico Psiquiatra
       </p>
     </article>
 
     <article class="group text-center md:text-left card-especialista">
-      <div class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer">
-        <Image 
-          src={fotoDiego} 
-          alt="Lic. Diego Tripelli, Psicólogo Clínico" 
+      <div
+        class="aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-high relative mb-6 shadow-md cursor-pointer"
+      >
+        <Image
+          src={fotoDiego}
+          alt="Lic. Diego Tripelli, Psicólogo Clínico"
           class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:blur-sm transition-all duration-700"
           loading="lazy"
           decoding="async"
-          width={600}
-          height={800}
+          width={500}
+          height={667}
         />
-        <div class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left">
-          <ul class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+        <div
+          class="absolute inset-0 bg-primary/80 backdrop-blur-xs flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-left"
+        >
+          <ul
+            class="space-y-3 text-white/90 text-sm md:text-base font-body leading-relaxed translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+          >
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Psicólogo Clínico - Terapia Cognitivo Conductual.
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Abordaje de cuadros refractarios y desestabilización aguda.
             </li>
             <li class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm mt-1" aria-hidden="true">check_circle</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                class="text-tertiary-fixed-dim mt-1 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <path
+                  d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm158-440-203 203-109-109-57 57 166 166 260-260-57-57Zm-158-80Z"
+                ></path>
+              </svg>
               Evaluación neurocognitiva y neuropsicológica.
             </li>
           </ul>
         </div>
       </div>
       <h3 class="font-headline text-2xl text-primary">Lic. Diego Tripelli</h3>
-      <p class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold">
+      <p
+        class="font-label text-xs md:text-sm text-secondary uppercase tracking-widest mt-2 font-bold"
+      >
         Psicólogo Clínico - TCC
       </p>
     </article>
-
   </div>
 </section>
 
 <script>
   // En móviles reales (iPhone, etc.), el :hover no funciona de forma intuitiva.
   // Necesitamos JavaScript para que el primer toque abra la información y el segundo toque la cierre o siga el enlace.
-  
+
   function initCardToggles() {
-    const cards = document.querySelectorAll('.card-especialista .aspect-\\[3\\/4\\]');
-    
-    cards.forEach(card => {
-      card.addEventListener('touchstart', (e) => {
-        // Obtenemos el contenedor 'group' para forzar las clases de Tailwind
-        const groupElement = card.closest('.group');
-        
-        // Si no está abierto, prevenimos la acción por defecto (si hubiera link) y lo abrimos
-        if (!groupElement?.classList.contains('mobile-active')) {
-          e.preventDefault();
-          // Cerramos cualquier otra tarjeta abierta
-          document.querySelectorAll('.mobile-active').forEach(openCard => {
-            openCard.classList.remove('mobile-active');
-          });
-          // Abrimos esta tarjeta
-          groupElement?.classList.add('mobile-active');
-        } else {
-          // Si ya está abierto, el segundo toque sigue la acción por defecto o lo cierra
-          // groupElement?.classList.remove('mobile-active'); 
-          // En un sitio profesional, lo mejor es dejar que el segundo toque haga 'clic' si hay un link.
-        }
-      }, { passive: false });
+    const cards = document.querySelectorAll(
+      ".card-especialista .aspect-\\[3\\/4\\]",
+    );
+
+    cards.forEach((card) => {
+      card.addEventListener(
+        "touchstart",
+        (e) => {
+          // Obtenemos el contenedor 'group' para forzar las clases de Tailwind
+          const groupElement = card.closest(".group");
+
+          // Si no está abierto, prevenimos la acción por defecto (si hubiera link) y lo abrimos
+          if (!groupElement?.classList.contains("mobile-active")) {
+            e.preventDefault();
+            // Cerramos cualquier otra tarjeta abierta
+            document.querySelectorAll(".mobile-active").forEach((openCard) => {
+              openCard.classList.remove("mobile-active");
+            });
+            // Abrimos esta tarjeta
+            groupElement?.classList.add("mobile-active");
+          } else {
+            // Si ya está abierto, el segundo toque sigue la acción por defecto o lo cierra
+            // groupElement?.classList.remove('mobile-active');
+            // En un sitio profesional, lo mejor es dejar que el segundo toque haga 'clic' si hay un link.
+          }
+        },
+        { passive: false },
+      );
     });
-    
+
     // Si tocas fuera de las tarjetas, cerramos todas
-    document.addEventListener('touchstart', (e) => {
-      if (! (e.target as Element).closest('.card-especialista')) {
-        document.querySelectorAll('.mobile-active').forEach(card => {
-          card.classList.remove('mobile-active');
+    document.addEventListener("touchstart", (e) => {
+      if (!(e.target as Element).closest(".card-especialista")) {
+        document.querySelectorAll(".mobile-active").forEach((card) => {
+          card.classList.remove("mobile-active");
         });
       }
     });
   }
 
   // Ejecutamos en Astro cuando la página carga
-  document.addEventListener('DOMContentLoaded', initCardToggles);
-  document.addEventListener('astro:page-load', initCardToggles); // Para Astro View Transitions
+  document.addEventListener("DOMContentLoaded", initCardToggles);
+  document.addEventListener("astro:page-load", initCardToggles); // Para Astro View Transitions
 </script>
 
 <style is:global>
