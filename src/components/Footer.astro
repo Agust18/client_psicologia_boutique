@@ -20,11 +20,11 @@
             <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-5 text-base font-bold">
                 Navegación
             </h3>
-            <ul class="space-y-4">
+            <ul class="space-y-2">
                 {['Inicio', 'Sobre Nosotros', 'Equipo Médico', 'Filosofía'].map((item) => (
                     <li>
                         <a href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`} 
-                           class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors underline-offset-4 hover:underline py-1 inline-block">
+                           class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors underline-offset-4 hover:underline py-2 inline-block w-full md:w-auto">
                             {item}
                         </a>
                     </li>
@@ -36,10 +36,10 @@
             <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-5 text-base font-bold">
                 Servicios
             </h3>
-            <ul class="space-y-4">
-                <li><a href="#areas-intervencion" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block">Áreas de Intervención</a></li>
-                <li><a href="#psicologia-organizacional" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block">Psicología Organizacional</a></li>
-                <li><a href="#contacto" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block font-medium">Contacto</a></li>
+            <ul class="space-y-2">
+                <li><a href="#areas-intervencion" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-2 inline-block w-full md:w-auto">Áreas de Intervención</a></li>
+                <li><a href="#psicologia-organizacional" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-2 inline-block w-full md:w-auto">Psicología Organizacional</a></li>
+                <li><a href="#contacto" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-2 inline-block font-medium w-full md:w-auto">Contacto</a></li>
             </ul>
         </nav>
 
@@ -47,9 +47,9 @@
             <h3 class="font-serif italic text-slate-900 dark:text-slate-100 mb-5 text-base font-bold">
                 Legal
             </h3>
-            <ul class="space-y-4">
-                <li><a href="/privacidad" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block">Política de Privacidad</a></li>
-                <li><a href="/terminos" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-1 inline-block">Términos de Servicio</a></li>
+            <ul class="space-y-2">
+                <li><a href="/privacidad" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-2 inline-block w-full md:w-auto">Política de Privacidad</a></li>
+                <li><a href="/terminos" class="font-sans text-sm text-slate-700 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors py-2 inline-block w-full md:w-auto">Términos de Servicio</a></li>
             </ul>
         </div>
     </div>
