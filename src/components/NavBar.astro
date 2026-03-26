@@ -2,26 +2,50 @@
   id="main-nav"
   class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent"
 >
-  <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
-    
+  <div
+    class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center"
+  >
     <div class="z-50">
-      <a href="#inicio" class="font-headline font-bold text-lg md:text-xl text-white hover:text-tertiary-fixed-dim transition-colors">
+      <a
+        href="#inicio"
+        class="font-headline font-bold text-lg md:text-xl text-white hover:text-tertiary-fixed-dim transition-colors"
+      >
         Consultorio Medical
       </a>
     </div>
 
     <div class="hidden md:flex items-center gap-8">
-      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#inicio">Inicio</a>
-      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#sobre-nosotros">Sobre Nosotros</a>
-      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#equipo-medico">Equipo Médico</a>
-      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#filosofia">Filosofía</a>
-      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#areas-intervencion">Servicios</a>
-      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#psicologia-organizacional">Organizaciones</a>
-      
-      <button id="nav-cta-consulta" class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-5 py-2 rounded-md font-bold text-sm hover:bg-tertiary-fixed transition-all contact-button">
-        <a href="#contacto">Solicitar Consulta</a>
-        
-      </button>
+      <a
+        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors"
+        href="#inicio">Inicio</a
+      >
+      <a
+        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors"
+        href="#sobre-nosotros">Sobre Nosotros</a
+      >
+      <a
+        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors"
+        href="#equipo-medico">Equipo Médico</a
+      >
+      <a
+        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors"
+        href="#filosofia">Filosofía</a
+      >
+      <a
+        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors"
+        href="#areas-intervencion">Servicios</a
+      >
+      <a
+        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors"
+        href="#psicologia-organizacional">Organizaciones</a
+      >
+
+      <a 
+  href="#contacto" 
+  class="inline-block bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-4 rounded-md font-bold hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105 shadow-lg text-center min-h-[48px]"
+>
+  Solicitar Consulta
+</a>
     </div>
 
     <button
@@ -41,16 +65,28 @@
   >
     <div class="flex flex-col items-center gap-6 w-full max-w-xs px-6">
       <a class="text-white text-xl font-headline" href="#inicio">Inicio</a>
-      <a class="text-white text-xl font-headline" href="#sobre-nosotros">Sobre Nosotros</a>
-      <a class="text-white text-xl font-headline" href="#equipo-medico">Equipo Médico</a>
-      <a class="text-white text-xl font-headline" href="#filosofia">Filosofía</a>
-      <a class="text-white text-xl font-headline" href="#areas-intervencion">Servicios</a>
-      <a class="text-white text-xl font-headline" href="#psicologia-organizacional">Organizaciones</a>
-      
-      <button class="mt-4 w-full bg-tertiary-fixed-dim text-on-tertiary-fixed py-4 rounded-md font-bold contact-button">
-        <a href="#contacto"> Solicitar Consulta</a>
-       
-      </button>
+      <a class="text-white text-xl font-headline" href="#sobre-nosotros"
+        >Sobre Nosotros</a
+      >
+      <a class="text-white text-xl font-headline" href="#equipo-medico"
+        >Equipo Médico</a
+      >
+      <a class="text-white text-xl font-headline" href="#filosofia">Filosofía</a
+      >
+      <a class="text-white text-xl font-headline" href="#areas-intervencion"
+        >Servicios</a
+      >
+      <a
+        class="text-white text-xl font-headline"
+        href="#psicologia-organizacional">Organizaciones</a
+      >
+
+      <a
+        href="#contacto"
+        class="inline-block bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-4 rounded-md font-bold hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105 shadow-lg text-center min-h-[48px]"
+      >
+        Solicitar Consulta
+      </a>
     </div>
   </div>
 </nav>
@@ -69,48 +105,62 @@
   }
 
   .nav-scrolled {
-    background: #001237; 
+    background: #001237;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
   /* Hamburguesa a X */
-  #mobile-menu-button.open .line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  #mobile-menu-button.open .line:nth-child(2) { opacity: 0; }
-  #mobile-menu-button.open .line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  #mobile-menu-button.open .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #mobile-menu-button.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu-button.open .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 
-  #mobile-menu.active { translate: 0; }
+  #mobile-menu.active {
+    translate: 0;
+  }
 </style>
 
 <script>
   const setupNav = () => {
-    const nav = document.getElementById('main-nav');
-    const btn = document.getElementById('mobile-menu-button');
-    const menu = document.getElementById('mobile-menu');
+    const nav = document.getElementById("main-nav");
+    const btn = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
 
     // Scroll effect
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        nav?.classList.add('nav-scrolled');
-      } else {
-        nav?.classList.remove('nav-scrolled');
-      }
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > 20) {
+          nav?.classList.add("nav-scrolled");
+        } else {
+          nav?.classList.remove("nav-scrolled");
+        }
+      },
+      { passive: true },
+    );
 
     // Mobile Toggle
-    btn?.addEventListener('click', () => {
-      btn.classList.toggle('open');
-      menu?.classList.toggle('active');
-      document.body.style.overflow = menu?.classList.contains('active') ? 'hidden' : '';
+    btn?.addEventListener("click", () => {
+      btn.classList.toggle("open");
+      menu?.classList.toggle("active");
+      document.body.style.overflow = menu?.classList.contains("active")
+        ? "hidden"
+        : "";
     });
 
     // Cerrar al clickear links
-    menu?.querySelectorAll('a, button').forEach(link => {
-      link.addEventListener('click', () => {
-        btn?.classList.remove('open');
-        menu?.classList.remove('active');
-        document.body.style.overflow = '';
+    menu?.querySelectorAll("a, button").forEach((link) => {
+      link.addEventListener("click", () => {
+        btn?.classList.remove("open");
+        menu?.classList.remove("active");
+        document.body.style.overflow = "";
       });
     });
   };
