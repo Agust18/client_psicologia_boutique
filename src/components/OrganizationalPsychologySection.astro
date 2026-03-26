@@ -6,54 +6,113 @@ const { id } = Astro.props;
 ---
 
 <section id={id} class="py-24 md:py-32 px-4 md:px-8 bg-surface overflow-hidden">
-  <div class="max-w-7xl mx-auto bg-primary-container rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/10">
-    
+  <div
+    class="max-w-7xl mx-auto bg-primary-container rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border border-white/10"
+  >
     <div class="lg:w-1/2 p-8 md:p-12 lg:p-20 flex flex-col justify-center">
-      <span class="font-label text-xs md:text-sm uppercase tracking-widest text-tertiary-fixed-dim block mb-6 font-bold">
+      <span
+        class="font-label text-xs md:text-sm uppercase tracking-widest text-tertiary-fixed-dim block mb-6 font-bold"
+      >
         Corporativo & Organizacional
       </span>
-      
-      <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl text-white mb-8 leading-tight">
-        Psicología para <span class="italic text-tertiary-fixed-dim">Organizaciones de Alto Rendimiento.</span>
+
+      <h2
+        class="font-headline text-3xl md:text-4xl lg:text-5xl text-white mb-8 leading-tight"
+      >
+        Psicología para <span class="italic text-tertiary-fixed-dim"
+          >Organizaciones de Alto Rendimiento.</span
+        >
       </h2>
-      
+
       <p class="text-slate-200 text-lg mb-10 leading-relaxed font-body">
-        Trasladamos nuestra experiencia clínica a la salud sistémica de las empresas. Resolvemos conflictos, potenciamos el liderazgo y cuidamos el capital humano.
+        Trasladamos nuestra experiencia clínica a la salud sistémica de las
+        empresas. Resolvemos conflictos, potenciamos el liderazgo y cuidamos el
+        capital humano.
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div class="text-white flex items-center gap-3 group">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim bg-white/10 p-2 rounded-lg" aria-hidden="true">rocket_launch</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 -960 960 960"
+            fill="currentColor"
+            class="text-tertiary-fixed-dim bg-white/10 p-2 rounded-lg box-content"
+            aria-hidden="true"
+          >
+            <path
+              d="M520-120v-160h160v160H520Zm-240 0v-160h160v160H280Zm-80-240q-33 0-56.5-23.5T120-440v-280q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-720v280q0 33-23.5 56.5T760-360H200Zm0-80h560v-280H200v280Zm120-120h320v-40H320v40Zm0-80h320v-40H320v40Z"
+            ></path>
+          </svg>
           <span class="font-medium">Coaching Ejecutivo</span>
         </div>
         <div class="text-white flex items-center gap-3 group">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim bg-white/10 p-2 rounded-lg" aria-hidden="true">diversity_3</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 -960 960 960"
+            fill="currentColor"
+            class="text-tertiary-fixed-dim bg-white/10 p-2 rounded-lg box-content"
+            aria-hidden="true"
+          >
+            <path
+              d="M120-160v-80q0-33 17-61t47-43q31-16 66.5-24t72.5-8q10 0 19.5.5T362-374q-22 17-36 40t-18 50l-1 44h-187Zm533-15q-31-11-64-18t-69-7q-36 0-69 7t-64 18l-37-71q39-20 83-30.5t90-10.5q46 0 90 10.5t83 30.5l-36 71Zm127 15v-44q-4-27-18-50t-36-40q10-1 19.5-1.5T757-296q37 0 72.5 8t66.5 24q30 15 47 43t17 61v80H672l108-15Zm-452-445q-33 0-56.5-23.5T320-680q0-33 23.5-56.5T400-760q33 0 56.5 23.5T480-680q0 33-23.5 56.5T423-603.5 400-590Zm340 0q-33 0-56.5-23.5T660-680q0-33 23.5-56.5T740-760q33 0 56.5 23.5T820-680q0 33-23.5 56.5T740-590ZM480-360q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Z"
+            ></path>
+          </svg>
           <span class="font-medium">Equipos dinámicos</span>
         </div>
         <div class="text-white flex items-center gap-3 group">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim bg-white/10 p-2 rounded-lg" aria-hidden="true">forum</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 -960 960 960"
+            fill="currentColor"
+            class="text-tertiary-fixed-dim bg-white/10 p-2 rounded-lg box-content"
+            aria-hidden="true"
+          >
+            <path
+              d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Z"
+            ></path>
+          </svg>
           <span class="font-medium">Resolución de Conflictos</span>
         </div>
         <div class="text-white flex items-center gap-3 group">
-          <span class="material-symbols-outlined text-tertiary-fixed-dim bg-white/10 p-2 rounded-lg" aria-hidden="true">sync_alt</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 -960 960 960"
+            fill="currentColor"
+            class="text-tertiary-fixed-dim bg-white/10 p-2 rounded-lg box-content"
+            aria-hidden="true"
+          >
+            <path
+              d="M280-160 80-360l200-200 56 57-103 103h607v80H233l103 103-56 57Zm400-240-56-57 103-103H120v-80h607L624-743l56-57 200 200-200 200Z"
+            ></path>
+          </svg>
           <span class="font-medium">Feedback 360</span>
         </div>
       </div>
     </div>
 
     <div class="lg:w-1/2 relative min-h-[300px] md:min-h-[400px]">
-      <Image 
-        src={AltoRen} 
-        alt="Equipo profesional en entorno de oficina moderna de alto rendimiento" 
+      <Image
+        src={AltoRen}
+        alt="Equipo profesional en entorno de oficina moderna de alto rendimiento"
         class="absolute inset-0 w-full h-full object-cover opacity-60"
         loading="lazy"
         decoding="async"
         width={1200}
         height={800}
       />
-      <div class="absolute inset-0 bg-gradient-to-r from-primary-container via-transparent to-transparent hidden lg:block"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-primary-container via-transparent to-transparent hidden lg:block"
+      >
+      </div>
       <div class="absolute inset-0 bg-black/40"></div>
     </div>
-
   </div>
 </section>
