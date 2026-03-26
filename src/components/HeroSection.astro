@@ -104,23 +104,36 @@ import heroImg from "../assets/images/hero-main.jpg";
 
     /* Mobile text and spacing refinements */
     @media (max-width: 768px) {
-       
-        #inicio h1 {
-            min-height: 100vh; /* Mejor usar el alto de pantalla completo */
-        padding-top: 80px; /* El alto de tu Navbar aproximadamente */
+    /* La sección ocupa el alto de la pantalla y se alinea con el Navbar */
+    #inicio {
+        min-height: 100vh; 
+        min-height: 100dvh; /* Para navegadores móviles modernos */
+        padding-top: 80px !important; /* Espacio para el Navbar */
         padding-left: 1rem;
         padding-right: 1rem;
-        }
-        #inicio p {
-            font-size: 1rem;
-        }
-        #inicio .mt-12 {
-            margin-top: 1.25rem;
-        }
-        #inicio button {
-            width: 100%;
-        }
+        display: flex;
+        align-items: center;
     }
+
+    /* El título solo ajusta su tamaño, no el alto de la sección */
+    #inicio h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    #inicio p {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+    }
+
+    #inicio .mt-12 {
+        margin-top: 2rem;
+    }
+
+    #inicio button {
+        width: 100%;
+    }
+}
 </style>
 
 <script>
@@ -135,7 +148,7 @@ import heroImg from "../assets/images/hero-main.jpg";
             if (!heroSection || !heroBgImage) return;
             const scrollY = window.scrollY;
             const offset = Math.min(scrollY * 0.25, 120);
-            heroBgImage.style.transform = `translateY(${offset}px) scale(1.08)`;
+            heroBgImage.style.transform = `translateY(${scrollY * 0.1}px) scale(1.1)`;
         }
 
         window.addEventListener("scroll", updateHeroParallax);
