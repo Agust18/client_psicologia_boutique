@@ -1,188 +1,146 @@
 ---
 import { Image } from "astro:assets";
 import heroImg from "../assets/images/hero-main.jpg";
-// HeroSection component - Single Responsibility: Hero display
 ---
-
 <section
-    id="inicio"
-    class="relative min-h-[870px] flex items-center overflow-hidden px-8"
+  id="inicio"
+ class="relative min-h-[100dvh] lg:min-h-[80vh] lg:max-h-[900px] flex flex-col justify-start overflow-hidden m-0 p-0"
 >
-    <div class="absolute inset-0 z-0">
-        <Image
-            src={heroImg}
-            width={1920}
-            height={1080}
-            format="webp"        
-            quality={"mid"}
-            alt="Professional clinical setting"
-            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            loading="eager"
-            fetchpriority="high"
-        />
-        <div
-            class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"
-        >
-        </div>
-    </div>
-    <div
-        class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8"
-    >
-        <div class="lg:col-span-7 animate-fade-in-up">
-            <h1
-                class="font-headline text-5xl md:text-7xl lg:text-8xl text-on-primary leading-tight tracking-tight"
-            >
-                Atención focalizada en el <span
-                    class="italic text-tertiary-fixed-dim animate-pulse"
-                    >paciente crítico</span
-                >
-            </h1>
-            <p
-                class="mt-8 font-body text-xl text-primary-fixed max-w-xl leading-relaxed animate-fade-in-up animation-delay-200"
-            >
-                Un abordaje integral y sistémico diseñado para casos de alta
-                complejidad, donde la precisión médica se encuentra con la
-                profundidad humana.
-            </p>
-            <div
-                class="mt-12 flex flex-wrap gap-6 animate-fade-in-up animation-delay-400"
-            >
-                <button aria-label="Solicitar una consulta médica"
-                    class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-4 rounded-md font-bold hover:bg-tertiary-fixed transition-all duration-300 transform hover:scale-105 hover:shadow-lg contact-button"
-                >
-                    Solicitar Consulta
-                </button>
-                <button
-                    class="border-b-2 border-tertiary-fixed-dim text-white px-4 py-4 font-medium flex items-center gap-2 group hover:border-white transition-colors metodologia-button"
-                >
-                    Nuestra Metodología
-                    <span
-                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-300"
-                        data-icon="arrow_forward">arrow_forward</span
-                    >
-                </button>
-            </div>
-        </div>
-    </div>
+  <div class="absolute inset-0 z-0">
+    <Image
+      src={heroImg}
+      width={1920}
+      height={1080}
+      format="webp"
+      quality={"mid"}
+      alt="Professional clinical setting"
+      class="w-full h-full object-cover object-[center_25%] scale-110"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/60 to-transparent md:block hidden"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/100 via-primary/70 to-primary/30 md:hidden block"></div>
+  </div>
 
-    <!-- Scroll Indicator -->
-    <div
-        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-    >
-        <div
-            class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+  <div class="relative z-20 max-w-7xl mx-auto w-full px-8 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="lg:col-span-8 animate-fade-in-up">
+      <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-on-primary leading-tight tracking-tight">
+    Atención focalizada en el <span class="italic text-tertiary-fixed-dim animate-pulse">paciente crítico</span>
+</h1>
+
+      <p class="mt-8 font-body text-xl text-white/90 max-w-xl leading-relaxed animate-fade-in-up animation-delay-200 drop-shadow-md">
+        Un abordaje integral y sistémico diseñado para casos de alta complejidad, donde la precisión médica se encuentra con la profundidad humana.
+      </p>
+
+      <div class="mt-12 flex flex-wrap gap-6 animate-fade-in-up animation-delay-400">
+        <button 
+        id="hero-cta-consulta"
+          class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-4 rounded-md font-bold hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105 shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
         >
-            <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse">
-            </div>
-        </div>
+          Solicitar Consulta
+        </button>
+
+        <button 
+          id="hero-cta-metodologia"
+          class="group flex items-center gap-2 px-4 py-4 font-body text-sm font-semibold text-white transition-all duration-300 hover:text-tertiary-fixed-dim metodología-button"
+        >
+          <span class="border-b-2 border-tertiary-fixed-dim pb-0.5 group-hover:border-white transition-colors">
+            Nuestra Metodología
+          </span>
+          <span class="material-symbols-outlined text-tertiary-fixed-dim transition-transform duration-300 group-hover:translate-x-1">
+            arrow_forward
+          </span>
+        </button>
+      </div>
     </div>
+  </div>
+
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce z-20">
+    <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
+    </div>
+  </div>
 </section>
 
 <style>
+    /* RESET Y MEJORAS DE LEGIBILIDAD */
+    #inicio h1, #inicio p {
+        /* Sombra de seguridad para fondos claros */
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
     @keyframes fade-in-up {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
-    .animate-fade-in-up {
-        animation: fade-in-up 0.8s ease-out forwards;
-    }
+    .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+    .animation-delay-200 { animation-delay: 0.2s; }
+    .animation-delay-400 { animation-delay: 0.4s; }
 
-    .animation-delay-200 {
-        animation-delay: 0.2s;
-    }
-
-    .animation-delay-400 {
-        animation-delay: 0.4s;
-    }
-
-    /* Mobile text and spacing refinements */
     @media (max-width: 768px) {
-    /* La sección ocupa el alto de la pantalla y se alinea con el Navbar */
-    #inicio {
-        min-height: 100vh; 
-        min-height: 100dvh; /* Para navegadores móviles modernos */
-        padding-top: 80px !important; /* Espacio para el Navbar */
-        padding-left: 1rem;
-        padding-right: 1rem;
-        display: flex;
-        align-items: center;
+        #inicio h1 {
+            font-size: 2.5rem;
+            line-height: 1.1;
+        }
+        #inicio p {
+            font-size: 1rem;
+            color: #ffffff; /* Blanco puro en móvil para máximo contraste */
+        }
+        #inicio button {
+            width: 100%; /* Botones en bloque para facilitar el touch */
+            justify-content: center;
+        }
+        /* Glass effect sutil para el bloque de texto en móvil */
+        .lg:col-span-8 {
+            background: rgba(0, 18, 55, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
     }
-
-    /* El título solo ajusta su tamaño, no el alto de la sección */
-    #inicio h1 {
-        font-size: 2.5rem;
-        line-height: 1.1;
-    }
-
-    #inicio p {
-        font-size: 1.1rem;
-        margin-top: 1.5rem;
-    }
-
-    #inicio .mt-12 {
-        margin-top: 2rem;
-    }
-
-    #inicio button {
-        width: 100%;
-    }
-}
 </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // Parallax background effect
-        const heroSection = document.getElementById("inicio");
-        const heroBgImage = heroSection
-            ? heroSection.querySelector("img")
-            : null;
+  // Definimos la función con tipos de TypeScript
+  const setupHeroNavigation = (): void => {
+    const btnConsulta = document.querySelector("#hero-cta-consulta") as HTMLElement | null;
+    const btnMetodologia = document.querySelector("#hero-cta-metodologia") as HTMLElement | null;
 
-        function updateHeroParallax() {
-            if (!heroSection || !heroBgImage) return;
-            const scrollY = window.scrollY;
-            const offset = Math.min(scrollY * 0.25, 120);
-            heroBgImage.style.transform = `translateY(${scrollY * 0.1}px) scale(1.1)`;
+    if (btnConsulta) {
+      // Tipamos 'e' como MouseEvent
+      btnConsulta.onclick = (e: MouseEvent): void => {
+        e.preventDefault();
+        const target = document.getElementById("contacto");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
         }
+      };
+    }
 
-        window.addEventListener("scroll", updateHeroParallax);
-        window.addEventListener("resize", updateHeroParallax);
-
-        // Handle contact button click
-        const contactButton = document.querySelector(".contact-button");
-        if (contactButton) {
-            contactButton.addEventListener("click", () => {
-                const contactSection = document.getElementById("contacto");
-                if (contactSection) {
-                    contactSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                    });
-                }
-            });
+    if (btnMetodologia) {
+      btnMetodologia.onclick = (e: MouseEvent): void => {
+        e.preventDefault();
+        const target = document.getElementById("filosofia") || document.getElementById("sobre-nosotros");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
         }
+      };
+    }
+  };
 
-        // Handle metodologia button click
-        const metodologiaButton = document.querySelector(".metodologia-button");
-        if (metodologiaButton) {
-            metodologiaButton.addEventListener("click", () => {
-                const filosofiaSection = document.getElementById("filosofia");
-                if (filosofiaSection) {
-                    filosofiaSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                    });
-                }
-            });
-        }
+  // Listeners
+  document.addEventListener("DOMContentLoaded", setupHeroNavigation);
+  
+  // Parallax con tipado básico
+  window.addEventListener("scroll", (): void => {
+    const img = document.querySelector("#inicio img") as HTMLImageElement | null;
+    if (img) {
+      const scrollY: number = window.scrollY;
+      img.style.transform = `translateY(${Math.max(-scrollY * 0.15, -100)}px) scale(1.1)`;
+    }
+  }, { passive: true });
 
-        // initial parallax state
-        updateHeroParallax();
-    });
+  
 </script>
+

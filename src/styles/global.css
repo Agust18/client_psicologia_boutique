@@ -59,11 +59,20 @@
   --border-radius-full: 0.75rem;
 }
 
-
+/* Reset base para evitar espacios accidentales arriba */
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-x: hidden;
+  }
+}
 
 /* Reducir espacio vertical en mobile para secciones */
 @media (max-width: 768px) {
-  section[id] {
+  /* FIX CRÍTICO: Excluimos al Hero (#inicio) de esta regla */
+  section[id]:not(#inicio) {
     padding-top: 1.75rem !important;
     padding-bottom: 1.75rem !important;
   }
@@ -83,7 +92,4 @@
     margin-bottom: 1.25rem !important;
   }
 }
-
-
-
 

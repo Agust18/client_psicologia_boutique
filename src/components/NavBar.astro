@@ -1,110 +1,117 @@
----
-// NavBar component - Single Responsibility: Navigation
----
-
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.04)] transition-colors">
-  <div class="flex justify-between items-center w-full px-4 md:px-6 py-3 md:py-4 max-w-screen-2xl mx-auto">
-    <div class="text-lg md:text-xl font-serif font-bold text-slate-900 dark:text-slate-50">
-      <a href="#inicio" class="hover:text-primary transition-colors">Consultorio Medical</a>
+<nav
+  id="main-nav"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent"
+>
+  <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+    
+    <div class="z-50">
+      <a href="#inicio" class="font-headline font-bold text-lg md:text-xl text-white hover:text-tertiary-fixed-dim transition-colors">
+        Consultorio Medical
+      </a>
     </div>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex items-center gap-4 lg:gap-6">
-      <a class="text-slate-900 dark:text-white font-semibold border-b-2 border-amber-300 pb-1 font-sans text-sm font-medium hover:text-primary transition-colors" href="#inicio">Inicio</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#sobre-nosotros">Sobre Nosotros</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#equipo-medico">Equipo Médico</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#filosofia">Filosofía</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#areas-intervencion">Servicios</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#psicologia-organizacional">Organizaciones</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#contacto">Contacto</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#inicio">Inicio</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#sobre-nosotros">Sobre Nosotros</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#equipo-medico">Equipo Médico</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#filosofia">Filosofía</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#areas-intervencion">Servicios</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors" href="#psicologia-organizacional">Organizaciones</a>
+      
+      <button id="nav-cta-consulta" class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-5 py-2 rounded-md font-bold text-sm hover:bg-tertiary-fixed transition-all contact-button">
+        Solicitar Consulta
+      </button>
     </div>
 
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button" class="md:hidden scale-95 active:scale-100 transition-transform bg-primary text-on-primary px-2.5 py-1 rounded-md font-medium text-sm">
-      <span aria-hidden="true" aria-label="Menú Principal" class="material-symbols-outlined text-sm">menu</span>
-    </button>
-
-    <!-- CTA Button -->
-    <button class="hidden md:block scale-95 active:scale-100 transition-transform bg-primary text-on-primary px-3 lg:px-4 py-1.5 lg:py-2 rounded-md font-medium text-sm hover:bg-primary-container transition-colors contact-button">
-      Solicitar Consulta
+    <button
+      id="mobile-menu-button"
+      aria-label="Abrir menú"
+      class="md:hidden z-50 flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none"
+    >
+      <span class="line w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="line w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <span class="line w-6 h-0.5 bg-white transition-all duration-300"></span>
     </button>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-lg border-t border-slate-200 dark:border-slate-800">
-    <div class="flex flex-col px-3 md:px-6 py-3 md:py-4 space-y-2.5 md:space-y-3">
-      <a class="text-slate-900 dark:text-white font-semibold border-b-2 border-amber-300 pb-1 font-sans text-sm font-medium" href="#inicio">Inicio</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#sobre-nosotros">Sobre Nosotros</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#equipo-medico">Equipo Médico</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#filosofia">Filosofía</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#areas-intervencion">Servicios</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#psicologia-organizacional">Organizaciones</a>
-      <a class="text-slate-500 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-300 transition-all duration-300 font-sans text-sm font-medium" href="#contacto">Contacto</a>
-      <button class="bg-primary text-on-primary px-3 md:px-4 py-2 md:py-2.5 rounded-md font-medium text-sm hover:bg-primary-container transition-colors w-full mt-2.5 md:mt-3 contact-button">
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 w-full h-screen bg-primary/98 backdrop-blur-xl flex flex-col items-center justify-center translate-x-full transition-transform duration-500 md:hidden z-40"
+  >
+    <div class="flex flex-col items-center gap-6 w-full max-w-xs px-6">
+      <a class="text-white text-xl font-headline" href="#inicio">Inicio</a>
+      <a class="text-white text-xl font-headline" href="#sobre-nosotros">Sobre Nosotros</a>
+      <a class="text-white text-xl font-headline" href="#equipo-medico">Equipo Médico</a>
+      <a class="text-white text-xl font-headline" href="#filosofia">Filosofía</a>
+      <a class="text-white text-xl font-headline" href="#areas-intervencion">Servicios</a>
+      <a class="text-white text-xl font-headline" href="#psicologia-organizacional">Organizaciones</a>
+      
+      <button class="mt-4 w-full bg-tertiary-fixed-dim text-on-tertiary-fixed py-4 rounded-md font-bold contact-button">
         Solicitar Consulta
       </button>
     </div>
   </div>
 </nav>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!(e.target instanceof Node)) return;
-        if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-          mobileMenu.classList.add('hidden');
-        }
-      });
+<style>
+  /* Fix para el ancho total en móvil */
+  @media (max-width: 768px) {
+    #main-nav {
+      width: 100%;
+      left: 0;
     }
+    /* Aseguramos que el botón no rompa el diseño */
+    .contact-button {
+      white-space: nowrap;
+    }
+  }
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        if (!(e.target instanceof Node)) return;
-        e.preventDefault();
-        const currentAnchor = e.currentTarget;
-        if (!(currentAnchor instanceof HTMLAnchorElement)) return;
-        const href = currentAnchor.getAttribute('href');
-        if (!href) return;
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Close mobile menu after navigation
-          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-          }
-        }
-      });
+  .nav-scrolled {
+    background: #001237; 
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  /* Hamburguesa a X */
+  #mobile-menu-button.open .line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  #mobile-menu-button.open .line:nth-child(2) { opacity: 0; }
+  #mobile-menu-button.open .line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  #mobile-menu.active { translate: 0; }
+</style>
+
+<script>
+  const setupNav = () => {
+    const nav = document.getElementById('main-nav');
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    // Scroll effect
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav?.classList.add('nav-scrolled');
+      } else {
+        nav?.classList.remove('nav-scrolled');
+      }
+    }, { passive: true });
+
+    // Mobile Toggle
+    btn?.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      menu?.classList.toggle('active');
+      document.body.style.overflow = menu?.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Handle contact button clicks
-    document.querySelectorAll('.contact-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const contactSection = document.getElementById('contacto');
-        if (contactSection) {
-          contactSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Close mobile menu after navigation
-          if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-          }
-        }
+    // Cerrar al clickear links
+    menu?.querySelectorAll('a, button').forEach(link => {
+      link.addEventListener('click', () => {
+        btn?.classList.remove('open');
+        menu?.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
-  });
+  };
+
+  document.addEventListener("DOMContentLoaded", setupNav);
 </script>
