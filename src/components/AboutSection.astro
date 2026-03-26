@@ -10,17 +10,17 @@ const { id } = Astro.props;
       
       <figure class="lg:col-span-5 relative animate-on-scroll m-0">
         <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 bg-slate-100">
-          <Image
-            src={aboutImg}
-            alt="Profesionales médicos en una sesión de consulta integral"
-            class="w-full h-full object-cover"
-            loading="lazy"
-            decoding="async"
-            format="webp"
-            quality={80}
-            width={500}
-            height={625}
-          />
+        <Image
+  src={aboutImg}
+  alt="Profesionales médicos en una sesión de consulta integral"
+  class="w-full h-full object-cover rounded-2xl"
+  loading="lazy"
+  decoding="async"
+  format="webp"
+  quality={75}  width={500}
+  height={625}
+  widths={[400, 500, 800]} sizes="(max-width: 768px) 100vw, 500px"
+/>
         </div>
         
         <figcaption class="absolute -bottom-10 -right-10 bg-white p-8 rounded-lg shadow-xl max-w-xs hidden md:block animate-on-scroll animation-delay-300 hover:shadow-2xl transition-shadow duration-300 border-l-4 border-primary">

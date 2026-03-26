@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 @theme {
   --color-primary-fixed-dim: #b4c6f7;
   --color-surface-container-lowest: #ffffff;
@@ -49,15 +51,16 @@
   --color-inverse-primary: #b4c6f7;
   --color-on-tertiary-fixed: #261900;
 
-  --font-family-headline: "Newsreader", serif;
-  --font-family-body: "Manrope", sans-serif;
-  --font-family-label: "Manrope", sans-serif;
+ --font-family-headline: "Newsreader", Times, serif;
+  --font-family-body: "Manrope", Arial, sans-serif;
+  --font-family-label: "Manrope", Arial, sans-serif;
 
   --border-radius-DEFAULT: 0.125rem;
   --border-radius-lg: 0.25rem;
   --border-radius-xl: 0.5rem;
   --border-radius-full: 0.75rem;
 }
+
 
 /* Reset base para evitar espacios accidentales arriba */
 @layer base {
