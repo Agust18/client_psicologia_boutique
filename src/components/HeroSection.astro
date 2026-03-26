@@ -4,7 +4,7 @@ import heroImg from "../assets/images/hero-main.jpg";
 ---
 <section
   id="inicio"
- class="relative min-h-[100dvh] lg:min-h-[80vh] lg:max-h-[900px] flex flex-col justify-start overflow-hidden m-0 p-0"
+  class="relative min-h-[100dvh] lg:min-h-[85vh] lg:max-h-[850px] flex flex-col justify-center overflow-hidden m-0 p-0"
 >
   <div class="absolute inset-0 z-0">
     <Image
@@ -14,35 +14,35 @@ import heroImg from "../assets/images/hero-main.jpg";
       format="webp"
       quality={"mid"}
       alt="Professional clinical setting"
-      class="w-full h-full object-cover object-[center_25%] scale-110"
+      class="w-full h-full object-cover object-center scale-110"
       loading="eager"
       fetchpriority="high"
     />
     <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/60 to-transparent md:block hidden"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/100 via-primary/70 to-primary/30 md:hidden block"></div>
-  </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent md:hidden block"></div>
+    <div class="absolute inset-0 bg-black/20 md:hidden block"></div> </div>
 
-  <div class="relative z-20 max-w-7xl mx-auto w-full px-8 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8">
+  <div class="relative z-20 max-w-7xl mx-auto w-full px-6 pt-32 pb-20 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8">
     <div class="lg:col-span-8 animate-fade-in-up">
-      <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-on-primary leading-tight tracking-tight">
-    Atención focalizada en el <span class="italic text-tertiary-fixed-dim animate-pulse">paciente crítico</span>
-</h1>
+      <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-on-primary leading-tight tracking-tight drop-shadow-lg">
+        Atención focalizada en el <span class="italic text-tertiary-fixed-dim animate-pulse">paciente crítico</span>
+      </h1>
 
-      <p class="mt-8 font-body  text-xl text-white/90 max-w-xl leading-relaxed animate-fade-in-up animation-delay-200 drop-shadow-md">
+      <p class="mt-6 font-body text-lg md:text-xl text-white/95 max-w-xl leading-relaxed animate-fade-in-up animation-delay-200 drop-shadow-md">
         Un abordaje integral y sistémico diseñado para casos de alta complejidad, donde la precisión médica se encuentra con la profundidad humana.
       </p>
 
-      <div class="mt-12 flex flex-wrap gap-6 animate-fade-in-up animation-delay-400">
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 md:gap-6 animate-fade-in-up animation-delay-400">
         <button 
-        id="hero-cta-consulta"
-          class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-4 rounded-md font-bold hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105 shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
+          id="hero-cta-consulta"
+          class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-8 py-4 rounded-md font-bold hover:bg-white hover:text-primary transition-all duration-300 transform active:scale-95 shadow-xl text-center"
         >
           Solicitar Consulta
         </button>
 
         <button 
           id="hero-cta-metodologia"
-          class="group flex items-center gap-2 px-4 py-4 font-body text-sm font-semibold text-white transition-all duration-300 hover:text-tertiary-fixed-dim metodología-button"
+          class="group flex items-center justify-center gap-2 px-4 py-4 font-body text-sm font-semibold text-white transition-all duration-300 hover:text-tertiary-fixed-dim metodología-button"
         >
           <span class="border-b-2 border-tertiary-fixed-dim pb-0.5 group-hover:border-white transition-colors">
             Nuestra Metodología
@@ -54,51 +54,32 @@ import heroImg from "../assets/images/hero-main.jpg";
       </div>
     </div>
   </div>
-
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce z-20">
-    <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-      <div class="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
-    </div>
-  </div>
 </section>
 
 <style>
-    /* RESET Y MEJORAS DE LEGIBILIDAD */
     #inicio h1, #inicio p {
-        /* Sombra de seguridad para fondos claros */
-        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Evitamos el Glass Effect pesado en móvil que suele dar problemas de renderizado */
+    @media (max-width: 768px) {
+        #inicio {
+            /* Centramos el contenido verticalmente para evitar cortes */
+            justify-content: center;
+        }
+        #inicio h1 {
+            font-size: 2.5rem; /* Ajuste fino para pantallas pequeñas */
+        }
+        /* En lugar de un fondo sólido, usamos un degradado más fuerte en la imagen */
     }
 
     @keyframes fade-in-up {
-        from { opacity: 0; transform: translateY(30px); }
+        from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
     .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
     .animation-delay-200 { animation-delay: 0.2s; }
     .animation-delay-400 { animation-delay: 0.4s; }
-
-    @media (max-width: 768px) {
-        #inicio h1 {
-            font-size: 2.5rem;
-            line-height: 1.1;
-        }
-        #inicio p {
-            font-size: 1rem;
-            color: #ffffff; /* Blanco puro en móvil para máximo contraste */
-        }
-        #inicio button {
-            width: 100%; /* Botones en bloque para facilitar el touch */
-            justify-content: center;
-        }
-        /* Glass effect sutil para el bloque de texto en móvil */
-        .lg:col-span-8 {
-            background: rgba(0, 18, 55, 0.2);
-            backdrop-filter: blur(4px);
-            padding: 1.5rem;
-            border-radius: 1rem;
-        }
-    }
 </style>
 
 <script>
