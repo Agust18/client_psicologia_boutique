@@ -1,36 +1,59 @@
 ---
-import '@fontsource/manrope';
-import '@fontsource/newsreader';
+import "@fontsource/manrope";
+import "@fontsource/newsreader";
 
 const { title, description } = Astro.props;
-import '../styles/global.css';
+import "../styles/global.css";
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es" class="light">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title || "Atelier Medical"}</title> 
-  {description && <meta name="description" content={description} />}
-  
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  
-  <meta name="generator" content={Astro.generator} />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title || "Atelier Medical"}</title>
+    {description && <meta name="description" content={description} />}
 
-<body class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <slot />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://client-psicologia-boutique.pages.dev/"
+    />
+    <meta property="og:title" content={title || "Atelier Medical"} />
+    <meta
+      property="og:description"
+      content={description || "Descripción de tu clínica"}
+    />
+    <meta
+      property="og:image"
+      content="https://client-psicologia-boutique.pages.dev/og-image.jpg"
+    />
 
-<style is:global>
-  .glass-nav {
-    background: rgba(248, 249, 250, 0.8);
-    backdrop-filter: blur(12px);
-  }
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:image"
+      content="https://client-psicologia-boutique.pages.dev/og-image.jpg"
+    />
 
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-</style>
-</body>
+    <meta name="generator" content={Astro.generator} />
+  </head>
+
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed"
+  >
+    <slot />
+
+    <style is:global>
+      .glass-nav {
+        background: rgba(248, 249, 250, 0.8);
+        backdrop-filter: blur(12px);
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </body>
 </html>
