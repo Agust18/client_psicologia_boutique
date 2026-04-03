@@ -64,6 +64,10 @@
   }
 }
 
+
+
+
+
 /* Reducir espacio vertical en mobile para secciones */
 @media (max-width: 768px) {
   /* FIX CRÍTICO: Excluimos al Hero (#inicio) de esta regla */

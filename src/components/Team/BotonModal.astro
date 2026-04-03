@@ -1,0 +1,15 @@
+---
+interface Props {
+  modalId: string;
+}
+const { modalId } = Astro.props;
+---
+
+<button
+  class="modal-trigger mt-4 text-xs uppercase tracking-widest font-bold font-body text-tertiary-fixed-dim hover:text-primary transition-colors flex items-center gap-2 mx-auto md:mx-0"
+  data-modal={modalId}
+  aria-haspopup="dialog"
+>
+  Ver perfil completo
+  <span aria-hidden="true">→</span>
+</button>

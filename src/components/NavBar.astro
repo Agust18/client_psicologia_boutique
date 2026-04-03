@@ -90,12 +90,14 @@
     }
   }
 
-  .nav-scrolled {
-    background: #001237;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
+
+  /* Estado Scrolled */
+.nav-scrolled {
+  background: #001237;
+  /* Eliminamos el cambio de padding que causaba el salto */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom-color: rgba(255,255,255,0.1); /* Opcional: un borde sutil */
+}
 
   /* Hamburguesa a X */
   #mobile-menu-button.open .line:nth-child(1) {
@@ -119,37 +121,52 @@
     const btn = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
 
-    // Scroll effect
+    // 1. Ejecución inmediata para evitar el parpadeo al recargar
+    const updateNavState = () => {
+      if (window.scrollY > 20) {
+        nav?.classList.add("nav-scrolled");
+      } else {
+        nav?.classList.remove("nav-scrolled");
+      }
+    };
+
+    // Corremos la función una vez apenas carga el script
+    updateNavState();
+
+    // 2. Scroll effect optimizado
     window.addEventListener(
       "scroll",
-      () => {
-        if (window.scrollY > 20) {
-          nav?.classList.add("nav-scrolled");
-        } else {
-          nav?.classList.remove("nav-scrolled");
-        }
-      },
-      { passive: true },
+      updateNavState,
+      { passive: true }
     );
 
     // Mobile Toggle
-    btn?.addEventListener("click", () => {
-      btn.classList.toggle("open");
-      menu?.classList.toggle("active");
-      document.body.style.overflow = menu?.classList.contains("active")
-        ? "hidden"
-        : "";
-    });
+btn?.addEventListener("click", () => {
+  // 1. Ejecutamos el toggle
+  menu?.classList.toggle("active");
+  btn.classList.toggle("open");
 
-    // Cerrar al clickear links
+  // 2. Verificamos el estado después del toggle
+  const isMenuOpen = menu?.classList.contains("active") ?? false;
+
+  // 3. Asignamos atributos de accesibilidad (PageSpeed lo ama)
+  btn.setAttribute("aria-expanded", isMenuOpen.toString());
+
+  // 4. Bloqueamos el scroll del body
+  document.body.style.overflow = isMenuOpen ? "hidden" : "";
+});
+    // 4. Cerrar al clickear links
     menu?.querySelectorAll("a, button").forEach((link) => {
       link.addEventListener("click", () => {
         btn?.classList.remove("open");
         menu?.classList.remove("active");
+        btn?.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
       });
     });
   };
 
+  // En Astro es mejor usar 'astro:page-load' si usas View Transitions,
+  // pero DOMContentLoaded está perfecto para una landing estándar.
   document.addEventListener("DOMContentLoaded", setupNav);
 </script>
