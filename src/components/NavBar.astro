@@ -1,6 +1,7 @@
 <nav
   id="main-nav"
   class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent"
+  
 >
   <div
     class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center"
@@ -90,14 +91,11 @@
     }
   }
 
-
-  /* Estado Scrolled */
-.nav-scrolled {
-  background: #001237;
-  /* Eliminamos el cambio de padding que causaba el salto */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border-bottom-color: rgba(255,255,255,0.1); /* Opcional: un borde sutil */
-}
+  .nav-scrolled {
+    background-color: #001237; /* El azul de Atelier */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
 
   /* Hamburguesa a X */
   #mobile-menu-button.open .line:nth-child(1) {
