@@ -1,11 +1,12 @@
+---
+/* Navbar.astro - Atelier Medical */
+---
+
 <nav
   id="main-nav"
-  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent"
-  
+  class="fixed top-0 left-0 w-full z-50 h-20 md:h-24 flex items-center transition-colors duration-500 border-b border-transparent bg-transparent"
 >
-  <div
-    class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center"
-  >
+  <div class="max-w-7xl mx-auto px-4 md:px-6 w-full h-full flex justify-between items-center">
     <div class="z-50">
       <a
         href="#inicio"
@@ -15,31 +16,13 @@
       </a>
     </div>
 
-    <div class="hidden md:flex items-center gap-6">
-      <a
-        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors py-4 px-2"
-        href="#inicio">Inicio</a
-      >
-      <a
-        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors py-4 px-2"
-        href="#sobre-nosotros">Sobre Nosotros</a
-      >
-      <a
-        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors py-4 px-2"
-        href="#equipo-medico">Equipo Médico</a
-      >
-      <a
-        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors py-4 px-2"
-        href="#filosofia">Filosofía</a
-      >
-      <a
-        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors py-4 px-2"
-        href="#areas-intervencion">Servicios</a
-      >
-      <a
-        class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors py-4 px-2"
-        href="#psicologia-organizacional">Organizaciones</a
-      >
+    <div class="hidden md:flex items-center gap-6 h-full">
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors px-2" href="#inicio">Inicio</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors px-2" href="#sobre-nosotros">Sobre Nosotros</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors px-2" href="#equipo-medico">Equipo Médico</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors px-2" href="#filosofia">Filosofía</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors px-2" href="#areas-intervencion">Servicios</a>
+      <a class="nav-link text-white/90 hover:text-tertiary-fixed-dim text-sm font-medium transition-colors px-2" href="#psicologia-organizacional">Organizaciones</a>
 
       <a
         href="#contacto"
@@ -64,40 +47,52 @@
     id="mobile-menu"
     class="fixed inset-0 w-full h-screen bg-primary/98 backdrop-blur-xl flex flex-col items-center justify-center translate-x-full transition-transform duration-500 md:hidden z-40"
   >
-    <div class="flex flex-col items-center gap-4 w-full max-w-xs px-6"> <a class="text-white text-xl font-headline py-3 w-full text-center" href="#inicio">Inicio</a>
-    <a class="text-white text-xl font-headline py-3 w-full text-center" href="#sobre-nosotros">Sobre Nosotros</a>
-    <a class="text-white text-xl font-headline py-3 w-full text-center" href="#equipo-medico">Equipo Médico</a>
-    <a class="text-white text-xl font-headline py-3 w-full text-center" href="#filosofia">Filosofía</a>
-    <a class="text-white text-xl font-headline py-3 w-full text-center" href="#areas-intervencion">Servicios</a>
-    <a class="text-white text-xl font-headline py-3 w-full text-center" href="#psicologia-organizacional">Organizaciones</a>
+    <div class="flex flex-col items-center gap-4 w-full max-w-xs px-6">
+      <a class="text-white text-xl font-headline py-3 w-full text-center" href="#inicio">Inicio</a>
+      <a class="text-white text-xl font-headline py-3 w-full text-center" href="#sobre-nosotros">Sobre Nosotros</a>
+      <a class="text-white text-xl font-headline py-3 w-full text-center" href="#equipo-medico">Equipo Médico</a>
+      <a class="text-white text-xl font-headline py-3 w-full text-center" href="#filosofia">Filosofía</a>
+      <a class="text-white text-xl font-headline py-3 w-full text-center" href="#areas-intervencion">Servicios</a>
+      <a class="text-white text-xl font-headline py-3 w-full text-center" href="#psicologia-organizacional">Organizaciones</a>
 
-    <a href="#contacto" class="inline-block bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-5 rounded-md font-bold w-full text-center min-h-[48px]">
-      Solicitar Consulta
-    </a>
-  </div>
+      <a
+        href="#contacto"
+        class="inline-block bg-tertiary-fixed-dim text-on-tertiary-fixed px-10 py-5 rounded-md font-bold w-full text-center min-h-[48px]"
+      >
+        Solicitar Consulta
+      </a>
+    </div>
   </div>
 </nav>
 
 <style>
-  /* Fix para el ancho total en móvil */
-  @media (max-width: 768px) {
+  /* Alturas fijas para evitar el salto (Cumulative Layout Shift) */
+  #main-nav {
+    height: 80px; /* Corresponde a h-20 */
+  }
+
+  @media (min-width: 768px) {
     #main-nav {
-      width: 100%;
-      left: 0;
-    }
-    /* Aseguramos que el botón no rompa el diseño */
-    .contact-button {
-      white-space: nowrap;
+      height: 96px; /* Corresponde a h-24 */
     }
   }
 
+  /* Estado al scrollear */
   .nav-scrolled {
-    background-color: #001237; /* El azul de Atelier */
+    background-color: #001237 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     border-bottom-color: rgba(255, 255, 255, 0.1);
+    /* Forzamos que la altura no cambie ni un píxel */
+    height: 80px !important;
   }
 
-  /* Hamburguesa a X */
+  @media (min-width: 768px) {
+    .nav-scrolled {
+      height: 96px !important;
+    }
+  }
+
+  /* Animación Hamburguesa */
   #mobile-menu-button.open .line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -109,7 +104,15 @@
   }
 
   #mobile-menu.active {
-    translate: 0;
+    transform: translateX(0);
+  }
+
+  /* Fixes adicionales */
+  @media (max-width: 768px) {
+    #main-nav {
+      width: 100%;
+      left: 0;
+    }
   }
 </style>
 
@@ -119,8 +122,8 @@
     const btn = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
 
-    // 1. Ejecución inmediata para evitar el parpadeo al recargar
     const updateNavState = () => {
+      // Usamos 20px de margen para que el cambio sea casi inmediato al bajar
       if (window.scrollY > 20) {
         nav?.classList.add("nav-scrolled");
       } else {
@@ -128,43 +131,31 @@
       }
     };
 
-    // Corremos la función una vez apenas carga el script
+    // Scroll listener optimizado
+    window.addEventListener("scroll", updateNavState, { passive: true });
+    
+    // Ejecución inmediata por si carga con scroll
     updateNavState();
 
-    // 2. Scroll effect optimizado
-    window.addEventListener(
-      "scroll",
-      updateNavState,
-      { passive: true }
-    );
+    // Mobile Menu Toggle
+    btn?.addEventListener("click", () => {
+      const isOpen = menu?.classList.toggle("active");
+      btn.classList.toggle("open");
+      
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    });
 
-    // Mobile Toggle
-btn?.addEventListener("click", () => {
-  // 1. Ejecutamos el toggle
-  menu?.classList.toggle("active");
-  btn.classList.toggle("open");
-
-  // 2. Verificamos el estado después del toggle
-  const isMenuOpen = menu?.classList.contains("active") ?? false;
-
-  // 3. Asignamos atributos de accesibilidad (PageSpeed lo ama)
-  btn.setAttribute("aria-expanded", isMenuOpen.toString());
-
-  // 4. Bloqueamos el scroll del body
-  document.body.style.overflow = isMenuOpen ? "hidden" : "";
-});
-    // 4. Cerrar al clickear links
-    menu?.querySelectorAll("a, button").forEach((link) => {
+    // Cerrar al clickear links
+    menu?.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         btn?.classList.remove("open");
         menu?.classList.remove("active");
-        btn?.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
       });
     });
   };
 
-  // En Astro es mejor usar 'astro:page-load' si usas View Transitions,
-  // pero DOMContentLoaded está perfecto para una landing estándar.
+  // Inicialización compatible con Astro
   document.addEventListener("DOMContentLoaded", setupNav);
 </script>

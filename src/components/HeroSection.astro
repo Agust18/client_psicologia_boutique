@@ -5,7 +5,7 @@ import heroImg from "../assets/images/hero-main.jpg";
 
 <section
   id="inicio"
-  class="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden m-0 p-0 top-0"
+ class="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden m-0 p-0 top-0"
 >
   <div class="absolute inset-0 z-0 overflow-hidden">
     <Image
@@ -13,30 +13,48 @@ import heroImg from "../assets/images/hero-main.jpg";
       width={1920}
       height={1080}
       format="webp"
-      quality="80" 
+      quality="80"
       alt="Professional clinical setting"
       class="w-full h-full object-cover object-center scale-110"
       loading="eager"
       fetchpriority="high"
     />
-    <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/60 to-transparent md:block hidden"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent md:hidden block"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/60 to-transparent md:block hidden"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent md:hidden block"
+    >
+    </div>
     <div class="absolute inset-0 bg-black/20 md:hidden block"></div>
   </div>
 
-  <div class="relative z-20 max-w-7xl mx-auto w-full px-6 pt-32 pb-20 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8">
-    <div class="lg:col-span-8 animate-fade-in-up">
-      <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-on-primary leading-tight tracking-tight drop-shadow-lg">
-        Atención integral en el <span class="italic text-tertiary-fixed-dim animate-pulse">paciente crítico</span>
+  <div
+   class="relative z-20 max-w-7xl mx-auto w-full px-6 pt-20 md:pt-24 pb-20 grid grid-cols-1 lg:grid-cols-12 gap-8">
+   <div class="lg:col-span-8 animate-fade-in-up">
+      <h1
+        class="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-on-primary leading-tight tracking-tight drop-shadow-lg"
+      >
+        Atención integral en el <span
+          class="italic text-tertiary-fixed-dim animate-pulse"
+          >paciente crítico</span
+        >
       </h1>
 
-      <p class="mt-6 font-body text-lg md:text-xl text-white/95 max-w-xl leading-relaxed animate-fade-in-up animation-delay-200 drop-shadow-md">
-        Coordinación clínica interdisciplinaria centrada en la persona. 
-        Acompañamos a personas atravesando situaciones de alta complejidad médica y emocional, integrando distintas disciplinas en un abordaje único, coherente y con sentido clínico.<br> 
+      <p
+        class="mt-6 font-body text-lg md:text-xl text-white/95 max-w-xl leading-relaxed animate-fade-in-up animation-delay-200 drop-shadow-md"
+      >
+        Coordinación clínica interdisciplinaria centrada en la persona.
+        Acompañamos a personas atravesando situaciones de alta complejidad
+        médica y emocional, integrando distintas disciplinas en un abordaje
+        único, coherente y con sentido clínico.<br />
         Cuando el problema es complejo, la solución no puede ser fragmentada.
       </p>
 
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 md:gap-6 animate-fade-in-up animation-delay-400">
+      <div
+        class="mt-10 flex flex-col sm:flex-row gap-4 md:gap-6 animate-fade-in-up animation-delay-400"
+      >
         <button
           id="hero-cta-consulta"
           class="bg-tertiary-fixed-dim text-on-tertiary-fixed px-8 py-4 rounded-md font-bold hover:bg-white hover:text-primary transition-all duration-300 transform active:scale-95 shadow-xl text-center"
@@ -50,7 +68,9 @@ import heroImg from "../assets/images/hero-main.jpg";
           class="group flex items-center justify-center gap-2 px-4 py-4 font-body text-sm font-semibold text-white transition-all duration-300 hover:text-tertiary-fixed-dim metodología-button"
           aria-label="Nuestra Metodología"
         >
-          <span class="border-b-2 border-tertiary-fixed-dim pb-0.5 group-hover:border-white transition-colors">
+          <span
+            class="border-b-2 border-tertiary-fixed-dim pb-0.5 group-hover:border-white transition-colors"
+          >
             Nuestra Metodología
           </span>
           <svg
@@ -62,7 +82,9 @@ import heroImg from "../assets/images/hero-main.jpg";
             class="text-tertiary-fixed-dim transition-transform duration-300 group-hover:translate-x-1"
             aria-hidden="true"
           >
-            <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"></path>
+            <path
+              d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+            ></path>
           </svg>
         </button>
       </div>
@@ -71,93 +93,49 @@ import heroImg from "../assets/images/hero-main.jpg";
 </section>
 
 <style>
-  #inicio h1,
-  #inicio p {
+  /* Optimización para el efecto Parallax */
+  .hero-bg-img {
+    will-change: transform;
+  }
+
+  #inicio h1, #inicio p {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
 
-  /* Evitamos el Glass Effect pesado en móvil que suele dar problemas de renderizado */
   @media (max-width: 768px) {
-    #inicio {
-      /* Centramos el contenido verticalmente para evitar cortes */
-      justify-content: center;
-    }
-    #inicio h1 {
-      font-size: 2.5rem; /* Ajuste fino para pantallas pequeñas */
-    }
-    /* En lugar de un fondo sólido, usamos un degradado más fuerte en la imagen */
+    #inicio { justify-content: center; }
+    #inicio h1 { font-size: 2.5rem; }
   }
 
   @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
-  }
-  .animation-delay-200 {
-    animation-delay: 0.2s;
-  }
-  .animation-delay-400 {
-    animation-delay: 0.4s;
-  }
+  .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
 </style>
 
 <script>
-  // Definimos la función con tipos de TypeScript
-  const setupHeroNavigation = (): void => {
-    const btnConsulta = document.querySelector(
-      "#hero-cta-consulta",
-    ) as HTMLElement | null;
-    const btnMetodologia = document.querySelector(
-      "#hero-cta-metodologia",
-    ) as HTMLElement | null;
+  // Lógica de navegación Smooth Scroll
+  const setupHero = () => {
+    const btnConsulta = document.querySelector("#hero-cta-consulta");
+    btnConsulta?.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+    });
 
-    if (btnConsulta) {
-      // Tipamos 'e' como MouseEvent
-      btnConsulta.onclick = (e: MouseEvent): void => {
-        e.preventDefault();
-        const target = document.getElementById("contacto");
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Parallax optimizado
+    const img = document.querySelector(".hero-bg-img") as HTMLElement;
+    if (img) {
+      window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY;
+        if (scrolled < window.innerHeight) {
+          img.style.transform = `translateY(${scrolled * 0.3}px) scale(1.1)`;
         }
-      };
-    }
-
-    if (btnMetodologia) {
-      btnMetodologia.onclick = (e: MouseEvent): void => {
-        e.preventDefault();
-        const target =
-          document.getElementById("filosofia") ||
-          document.getElementById("sobre-nosotros");
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      };
+      }, { passive: true });
     }
   };
 
-  // Listeners
-  document.addEventListener("DOMContentLoaded", setupHeroNavigation);
-
-  // Parallax con tipado básico
-  window.addEventListener(
-    "scroll",
-    (): void => {
-      const img = document.querySelector(
-        "#inicio img",
-      ) as HTMLImageElement | null;
-      if (img) {
-        const scrollY: number = window.scrollY;
-        img.style.transform = `translateY(${Math.max(-scrollY * 0.15, -100)}px) scale(1.1)`;
-      }
-    },
-    { passive: true },
-  );
+  document.addEventListener("DOMContentLoaded", setupHero);
 </script>
