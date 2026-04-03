@@ -1,0 +1,119 @@
+---
+import { Image } from 'astro:assets';
+import aboutImg from "../assets/images/about.jpg";
+const { id } = Astro.props;
+---
+
+<section id={id} class="about-section py-24 md:py-32 px-6 bg-surface">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+      
+      <div class="lg:col-span-5 lg:sticky lg:top-32 z-10">
+        <figure class="relative m-0 animate-on-scroll will-change-transform">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-slate-100">
+            <Image
+              src={aboutImg}
+              alt="Profesionales médicos"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              width={500}
+              height={625}
+              format="webp"
+            />
+          </div>
+          
+          <figcaption class="absolute -bottom-6 -right-4 md:-right-10 bg-white p-6 md:p-8 rounded-xl shadow-2xl max-w-[280px] hidden md:block border-l-8 border-tertiary-fixed-dim">
+            <p class="font-headline italic text-xl md:text-2xl text-primary leading-tight">
+              "La subjetividad como dato objetivo."
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="lg:col-span-7 animate-on-scroll animation-delay-200">
+        <header class="mb-8">
+          <span class="inline-block font-label text-xs uppercase tracking-[0.2em] text-secondary font-bold mb-3">
+            Identidad y Propuesta
+          </span>
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl text-primary leading-tight">
+            Quienes somos?
+          </h2>
+        </header>
+        
+        <div class="space-y-8 text-slate-700 text-lg leading-relaxed">
+          <div class="space-y-6">
+            <p>
+              Somos un dispositivo clínico orientado al abordaje integral de pacientes en situaciones de complejidad.<br>
+              Trabajamos con personas cuya situación excede los enfoques tradicionales, donde lo médico, lo psicológico y lo vincular se entrelazan de manera crítica.<br>
+              Nuestra propuesta se basa en una comprensión global del paciente, evitando la fragmentación del tratamiento y priorizando la construcción de una estrategia clínica coherente.<br>
+              El equipo se organiza en función de cada caso, integrando distintas disciplinas bajo una misma dirección clínica.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 p-8 rounded-2xl border-l-4 border-primary/20">
+            <h3 class="font-headline text-2xl text-primary mb-4 uppercase tracking-wide text-sm font-bold">Enfoque</h3>
+            <p class="mb-6">
+              El modelo tradicional fragmenta al paciente en múltiples intervenciones aisladas. En ese proceso, muchas veces se pierde la comprensión global de la situación.
+            </p>
+            
+            <p class="font-bold text-primary mb-4">
+              Nuestro enfoque propone integrar:
+            </p>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 list-none p-0 font-medium text-primary/80">
+              <li>• Lo médico</li>
+              <li>• Lo psicológico</li>
+              <li>• Lo corporal</li>
+              <li>• Lo vincular</li>
+              <li>• Lo existencial</li>
+            </ul>
+          </div>
+
+          <p>
+            Cada caso es abordado como una unidad, construyendo una estrategia clínica que ordena las intervenciones y les da sentido.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* FIX CRÍTICO: El sticky necesita que no haya cortes de overflow */
+  .about-section {
+    overflow: visible !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  /* RESET DE TRANSFORM: Si no lo reseteás, el sticky NO funciona */
+  .animate-on-scroll.revealed {
+    opacity: 1;
+    transform: none !important; 
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:sticky {
+      position: -webkit-sticky; /* Soporte Safari */
+      position: sticky;
+      top: 8rem; /* Ajustá esto según tu Navbar */
+      align-self: start; /* Evita que el div se estire a la altura del texto */
+    }
+  }
+</style>
+
+<script>
+  const observerOptions = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>

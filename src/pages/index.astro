@@ -2,14 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
 import HeroSection from '../components/HeroSection.astro';
-import AboutSection from '../components/AboutSection.astro';
-import LeadershipSection from '../components/LeadershipSection.astro';
-import BoutiquePhilosophySection from '../components/BoutiquePhilosophySection.astro';
-import AreasInterventionSection from '../components/AreasInterventionSection.astro';
-import FeaturedInterventionsSection from '../components/FeaturedInterventionsSection.astro';
+import QuienesSomos from '../components/QuienesSomos.astro';
+import AquienVaDirigido from '../components/AquienVaDirigido.astro';
+import EvaluacionPsiquiatrica from '../components/EvaluacionPsiquiatrica.astro';
+import ComoTrabajamos from '../components/ComoTrabajamos.astro';
+import Equipo from '../components/Equipo.astro';
+import Testimonios from '../components/Testimonios.astro';
+import PreguntasFrecuentes from '../components/PreguntasFrecuentes.astro';
+
+
 import OrganizationalPsychologySection from '../components/OrganizationalPsychologySection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import Footer from '../components/Footer.astro';
+import Servicios from '../components/Servicios.astro';
 ---
 
 <BaseLayout 
@@ -18,13 +23,23 @@ description="Consultoría médica boutique dedicada a la excelencia en casos de 
   <NavBar />
   <main class="">
     <HeroSection />
-    <AboutSection id="sobre-nosotros" />
-    <LeadershipSection id="equipo-medico" />
-    <BoutiquePhilosophySection id="filosofia" />
-    <AreasInterventionSection id="areas-intervencion" />
-    <FeaturedInterventionsSection id="intervenciones" />
-    <OrganizationalPsychologySection id="psicologia-organizacional" />
+    <QuienesSomos id="Quienes-Somos" />
+    <AquienVaDirigido id="a-quien-dirigido" />
+    <EvaluacionPsiquiatrica id="evaluacion-psi" />
+    <ComoTrabajamos id="como-trabajamos" />
+    <!-- <Equipo id="equipo-medico" /> -->
+    <Testimonios id="testimonios" />
+    <PreguntasFrecuentes id="preguntas-frecuentes" />
+    
+    
+    <!-- <Servicios id="servicios" /> -->
+    
+    
+ 
+    
+    <!-- <OrganizationalPsychologySection id="psicologia-organizacional" /> -->
     <ContactSection id="contacto" />
+  
   </main>
   <Footer />
 </BaseLayout>

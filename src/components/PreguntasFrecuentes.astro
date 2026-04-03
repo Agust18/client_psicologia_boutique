@@ -1,0 +1,104 @@
+---
+const { id } = Astro.props;
+const faqs = [
+  {
+    question: "¿En qué consiste la primera evaluación?",
+    answer: "Es una instancia de análisis clínico integral donde se evalúa la situación del paciente y se definen posibles líneas de abordaje."
+  },
+  {
+    question: "¿Es necesario que intervengan todas las disciplinas?",
+    answer: "No. Se define en función de cada caso y la singularidad del cuadro clínico."
+  },
+  {
+    question: "¿Trabajan con otros profesionales?",
+    answer: "Sí, el enfoque incluye la articulación y coordinación constante con otros equipos tratantes para garantizar la coherencia del tratamiento."
+  },
+  {
+    question: "¿La atención puede ser online?",
+    answer: "Depende de la situación clínica específica. Evaluamos la viabilidad de la modalidad virtual buscando siempre la mayor eficacia terapéutica."
+  },
+  {
+    question: "¿Se incluye a la familia?",
+    answer: "Sí. El entorno es parte fundamental del proceso y trabajamos de manera estrecha con la familia para sostener los objetivos terapéuticos."
+  }
+];
+---
+
+<section id={id} class="py-20 md:py-32 px-6 bg-white border-t border-slate-50">
+  <div class="max-w-4xl mx-auto">
+    
+    <header class="mb-16 md:mb-24 text-center">
+      <span class="text-secondary font-label text-[10px] uppercase tracking-[0.4em] font-bold mb-4 block">Dudas Comunes</span>
+      <h2 class="font-headline text-4xl md:text-6xl text-primary lowercase tracking-tighter">preguntas frecuentes.</h2>
+    </header>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="faq-item border-b border-slate-100 group">
+          <button 
+            class="faq-button w-full py-8 flex justify-between items-center text-left hover:text-secondary transition-all focus:outline-none"
+            aria-expanded="false"
+          >
+            <span class="font-body text-xl md:text-2xl text-primary font-medium pr-8 leading-tight">
+              {faq.question}
+            </span>
+            <div class="relative w-6 h-6 shrink-0">
+              <div class="absolute inset-0 m-auto w-full h-[1px] bg-slate-300 group-hover:bg-secondary transition-all"></div>
+              <div class="faq-icon-v absolute inset-0 m-auto h-full w-[1px] bg-slate-300 group-hover:bg-secondary transition-all duration-500"></div>
+            </div>
+          </button>
+          
+          <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+            <div class="pb-10">
+              <p class="font-body text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl">
+                {faq.answer}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function setupFaq() {
+    const buttons = document.querySelectorAll('.faq-button');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling as HTMLElement; // <-- EL FIX ESTÁ ACÁ
+        const iconV = button.querySelector('.faq-icon-v') as HTMLElement; // <-- Y ACÁ
+        
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+        // Toggle del estado
+        button.setAttribute('aria-expanded', String(!isOpen));
+
+        if (!isOpen) {
+          // Ahora TypeScript sabe que 'answer' tiene la propiedad style y scrollHeight
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          if (iconV) {
+            iconV.style.transform = 'rotate(90deg)';
+            iconV.style.opacity = '0';
+          }
+        } else {
+          answer.style.maxHeight = '0px';
+          if (iconV) {
+            iconV.style.transform = 'rotate(0deg)';
+            iconV.style.opacity = '1';
+          }
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupFaq);
+</script>
+<style>
+  /* Para que el texto no "salte" al abrir */
+  .faq-answer {
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+</style>
